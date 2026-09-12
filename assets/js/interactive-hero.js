@@ -1,8 +1,7 @@
 /**
- * Alaguselvaganesh V — Interactive Hero Visualization
- * Concept: Central glowing node "GANESH" connected to satellite engineering nodes:
- * React, Node.js, AI, Java, Python, PostgreSQL, Cloud, Research.
- * High-performance 60fps HTML5 Canvas with smooth cursor reactivity and mobile optimization.
+ * Alaguselvaganesh V — Interactive 3D Holographic Engineering Constellation
+ * Central Core: "GANESH" with rotating 3D spherical orbits & laser data filaments.
+ * Interactive 3D drag rotation, perspective depth, reactive particles, and sound fx.
  */
 
 (function () {
@@ -11,56 +10,52 @@
 
   const ctx = canvas.getContext('2d');
   let width, height, dpr;
-  let animationFrameId;
 
-  // Track mouse coordinates
+  // 3D Rotation angles and velocities
+  let rotX = 0.2;
+  let rotY = 0;
+  let velRotX = 0;
+  let velRotY = 0.003;
+  let isDragging = false;
+  let lastMouseX = 0;
+  let lastMouseY = 0;
+
+  // Track cursor for ambient attraction
   const mouse = {
     x: -1000,
     y: -1000,
-    targetX: 0,
-    targetY: 0,
-    currentX: 0,
-    currentY: 0,
-    isHovered: false
+    isOverCanvas: false,
+    hoveredNode: null
   };
 
-  // Satellite node definitions matching resume competencies
-  const satellitesData = [
-    { label: 'React', angle: 0, distance: 135, speed: 0.0035, radius: 24, color: '#00f0ff', accent: 'rgba(0, 240, 255, 0.4)' },
-    { label: 'Node.js', angle: Math.PI * 0.25, distance: 165, speed: -0.0028, radius: 25, color: '#22c55e', accent: 'rgba(34, 197, 94, 0.4)' },
-    { label: 'AI', angle: Math.PI * 0.5, distance: 125, speed: 0.0042, radius: 22, color: '#a855f7', accent: 'rgba(168, 85, 247, 0.4)' },
-    { label: 'Java', angle: Math.PI * 0.75, distance: 175, speed: -0.0032, radius: 24, color: '#f97316', accent: 'rgba(249, 115, 22, 0.4)' },
-    { label: 'Python', angle: Math.PI, distance: 140, speed: 0.0038, radius: 25, color: '#38bdf8', accent: 'rgba(56, 189, 248, 0.4)' },
-    { label: 'PostgreSQL', angle: Math.PI * 1.25, distance: 180, speed: -0.0025, radius: 27, color: '#60a5fa', accent: 'rgba(96, 165, 250, 0.4)' },
-    { label: 'Cloud', angle: Math.PI * 1.5, distance: 130, speed: 0.0045, radius: 23, color: '#fbbf24', accent: 'rgba(251, 191, 36, 0.4)' },
-    { label: 'Research', angle: Math.PI * 1.75, distance: 160, speed: -0.0036, radius: 26, color: '#ec4899', accent: 'rgba(236, 72, 153, 0.4)' }
+  // Satellite node definitions with 3D spherical coordinates (theta, phi, radius)
+  const nodeDefs = [
+    { label: 'React', theta: 0.2, phi: 0.4, r: 180, color: '#00f0ff', accent: 'rgba(0, 240, 255, 0.5)' },
+    { label: 'Node.js', theta: 1.1, phi: 1.2, r: 195, color: '#22c55e', accent: 'rgba(34, 197, 94, 0.5)' },
+    { label: 'AI', theta: 2.1, phi: 0.6, r: 175, color: '#b05bfb', accent: 'rgba(176, 91, 251, 0.5)' },
+    { label: 'Java', theta: 3.3, phi: 1.3, r: 190, color: '#f97316', accent: 'rgba(249, 115, 22, 0.5)' },
+    { label: 'Python', theta: 4.2, phi: 0.5, r: 185, color: '#38bdf8', accent: 'rgba(56, 189, 248, 0.5)' },
+    { label: 'PostgreSQL', theta: 5.1, phi: 1.5, r: 200, color: '#60a5fa', accent: 'rgba(96, 165, 250, 0.5)' },
+    { label: 'Cloud', theta: 1.8, phi: 2.1, r: 170, color: '#fbbf24', accent: 'rgba(251, 191, 36, 0.5)' },
+    { label: 'Research', theta: 3.9, phi: 2.4, r: 190, color: '#ec4899', accent: 'rgba(236, 72, 153, 0.5)' }
   ];
 
-  // Data pulse packets traveling along edges
-  const packets = [];
-  satellitesData.forEach((_, index) => {
-    packets.push({
-      satelliteIndex: index,
-      progress: Math.random(),
-      speed: 0.006 + Math.random() * 0.006,
-      direction: Math.random() > 0.5 ? 1 : -1
-    });
-  });
+  // Particle bursts on node clicks
+  const shockwaves = [];
 
-  // Background ambient floating particles
-  const ambientParticles = [];
-  const PARTICLE_COUNT = window.innerWidth < 768 ? 16 : 32;
+  // Ambient 3D starfield particles
+  const stars = [];
+  const STAR_COUNT = 65;
 
-  function initAmbientParticles() {
-    ambientParticles.length = 0;
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      ambientParticles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 1.6 + 0.8,
-        alpha: Math.random() * 0.4 + 0.1
+  function initStars() {
+    stars.length = 0;
+    for (let i = 0; i < STAR_COUNT; i++) {
+      stars.push({
+        x: (Math.random() - 0.5) * 600,
+        y: (Math.random() - 0.5) * 600,
+        z: (Math.random() - 0.5) * 600,
+        size: Math.random() * 1.8 + 0.5,
+        alpha: Math.random() * 0.6 + 0.2
       });
     }
   }
@@ -75,237 +70,305 @@
     canvas.height = height * dpr;
     ctx.scale(dpr, dpr);
 
-    initAmbientParticles();
+    initStars();
   }
 
   window.addEventListener('resize', resize);
   resize();
 
-  // Mouse / Touch interaction listeners
-  canvas.addEventListener('mousemove', (e) => {
+  // Mouse and Touch Interaction Handlers
+  canvas.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  window.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect();
     mouse.x = e.clientX - rect.left;
     mouse.y = e.clientY - rect.top;
-    mouse.targetX = (mouse.x - width / 2) * 0.14;
-    mouse.targetY = (mouse.y - height / 2) * 0.14;
-    mouse.isHovered = true;
+    mouse.isOverCanvas = mouse.x >= 0 && mouse.x <= width && mouse.y >= 0 && mouse.y <= height;
+
+    if (isDragging) {
+      const dx = e.clientX - lastMouseX;
+      const dy = e.clientY - lastMouseY;
+      velRotY = dx * 0.005;
+      velRotX = -dy * 0.005;
+      rotY += velRotY;
+      rotX += velRotX;
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
+    }
   });
 
-  canvas.addEventListener('mouseleave', () => {
-    mouse.targetX = 0;
-    mouse.targetY = 0;
-    mouse.isHovered = false;
-  });
+  // Touch handlers for mobile
+  canvas.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      lastMouseX = e.touches[0].clientX;
+      lastMouseY = e.touches[0].clientY;
+    }
+  }, { passive: true });
 
   canvas.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.touches[0].clientX - rect.left;
-      mouse.y = e.touches[0].clientY - rect.top;
-      mouse.targetX = (mouse.x - width / 2) * 0.08;
-      mouse.targetY = (mouse.y - height / 2) * 0.08;
-      mouse.isHovered = true;
+    if (isDragging && e.touches.length === 1) {
+      const dx = e.touches[0].clientX - lastMouseX;
+      const dy = e.touches[0].clientY - lastMouseY;
+      rotY += dx * 0.006;
+      rotX += -dy * 0.006;
+      lastMouseX = e.touches[0].clientX;
+      lastMouseY = e.touches[0].clientY;
     }
   }, { passive: true });
 
   canvas.addEventListener('touchend', () => {
-    mouse.targetX = 0;
-    mouse.targetY = 0;
-    mouse.isHovered = false;
+    isDragging = false;
+  });
+
+  // Click on canvas to spawn shockwave
+  canvas.addEventListener('click', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const cx = e.clientX - rect.left;
+    const cy = e.clientY - rect.top;
+
+    shockwaves.push({
+      x: cx,
+      y: cy,
+      radius: 4,
+      maxRadius: 120,
+      alpha: 1,
+      color: '#00f0ff'
+    });
+
+    if (window.playSfx) window.playSfx(580, 'sine', 0.12);
   });
 
   let time = 0;
 
-  function render() {
-    time += 0.02;
+  // 3D Point Projection Helper
+  function project3D(x, y, z, cx, cy, fov) {
+    // Rotate around X
+    let y1 = y * Math.cos(rotX) - z * Math.sin(rotX);
+    let z1 = y * Math.sin(rotX) + z * Math.cos(rotX);
 
-    // Smooth lerp mouse parallax offset
-    mouse.currentX += (mouse.targetX - mouse.currentX) * 0.08;
-    mouse.currentY += (mouse.targetY - mouse.currentY) * 0.08;
+    // Rotate around Y
+    let x2 = x * Math.cos(rotY) + z1 * Math.sin(rotY);
+    let z2 = -x * Math.sin(rotY) + z1 * Math.cos(rotY);
+
+    const scale = fov / (fov + z2);
+    return {
+      x2d: cx + x2 * scale,
+      y2d: cy + y1 * scale,
+      scale: scale,
+      z: z2
+    };
+  }
+
+  function render() {
+    time += 0.015;
+
+    // Natural inertia dampening
+    if (!isDragging) {
+      velRotY *= 0.96;
+      velRotX *= 0.96;
+      rotY += 0.0035 + velRotY;
+      rotX += velRotX;
+    }
 
     ctx.clearRect(0, 0, width, height);
 
-    // Dynamic Center Position with subtle breathing and parallax
-    const centerX = width / 2 + mouse.currentX + Math.sin(time * 0.8) * 3;
-    const centerY = height / 2 + mouse.currentY + Math.cos(time * 0.6) * 3;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const FOV = 420;
+    const scaleFactor = width < 480 ? 0.72 : (width < 768 ? 0.86 : 1);
 
-    // Scale distances dynamically for small screen widths
-    const scaleFactor = Math.min(width, height) < 420 ? 0.65 : (Math.min(width, height) < 560 ? 0.82 : 1);
-
-    // 1. Draw Ambient Floating Particles
+    // 1. Draw Ambient Rotating 3D Stars
     ctx.fillStyle = '#ffffff';
-    ambientParticles.forEach((p) => {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0) p.x = width;
-      if (p.x > width) p.x = 0;
-      if (p.y < 0) p.y = height;
-      if (p.y > height) p.y = 0;
-
-      ctx.save();
-      ctx.globalAlpha = p.alpha;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
+    stars.forEach((star) => {
+      const proj = project3D(star.x, star.y, star.z, centerX, centerY, FOV);
+      if (proj.scale > 0) {
+        ctx.save();
+        ctx.globalAlpha = star.alpha * Math.min(1, proj.scale);
+        ctx.beginPath();
+        ctx.arc(proj.x2d, proj.y2d, Math.max(0.5, star.size * proj.scale), 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
     });
 
-    // 2. Update Satellites positions and check hover
-    const computedSatellites = satellitesData.map((sat, index) => {
-      sat.angle += sat.speed;
-      const currentDist = sat.distance * scaleFactor;
-      
-      // Calculate basic position
-      let sx = centerX + Math.cos(sat.angle) * currentDist;
-      let sy = centerY + Math.sin(sat.angle) * currentDist;
+    // 2. Compute 3D Coordinates for Satellite Nodes
+    const satellites = nodeDefs.map((def, idx) => {
+      // Gentle orbital movement over time
+      const currentTheta = def.theta + time * 0.15 * (idx % 2 === 0 ? 1 : -1);
+      const currentPhi = def.phi + Math.sin(time * 0.3 + idx) * 0.15;
+      const radius = def.r * scaleFactor;
 
-      // Magnetic pull toward cursor if hovered
-      let isNearCursor = false;
-      if (mouse.isHovered) {
-        const dx = mouse.x - sx;
-        const dy = mouse.y - sy;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 70) {
-          isNearCursor = true;
-          sx += dx * 0.22;
-          sy += dy * 0.22;
-        }
+      const x = radius * Math.sin(currentPhi) * Math.cos(currentTheta);
+      const y = radius * Math.cos(currentPhi);
+      const z = radius * Math.sin(currentPhi) * Math.sin(currentTheta);
+
+      const proj = project3D(x, y, z, centerX, centerY, FOV);
+
+      // Check distance to mouse
+      let isHovered = false;
+      if (mouse.isOverCanvas) {
+        const dist = Math.hypot(mouse.x - proj.x2d, mouse.y - proj.y2d);
+        if (dist < 32) isHovered = true;
       }
 
       return {
-        ...sat,
-        x: sx,
-        y: sy,
-        isNearCursor
+        ...def,
+        x3d: x,
+        y3d: y,
+        z3d: z,
+        x2d: proj.x2d,
+        y2d: proj.y2d,
+        scale: proj.scale,
+        z: proj.z,
+        isHovered
       };
     });
 
-    // 3. Draw Connection Lines and Data Packets
-    computedSatellites.forEach((sat, index) => {
+    // 3. Sort Nodes by Depth (Z-Buffer Painter's Algorithm)
+    satellites.sort((a, b) => b.z - a.z);
+
+    // 4. Central Core Coordinates
+    const coreProj = project3D(0, 0, 0, centerX, centerY, FOV);
+
+    // 5. Draw Laser Connectors & Traveling Data Filaments
+    satellites.forEach((sat) => {
       ctx.save();
-
-      // Line style
       ctx.beginPath();
-      ctx.moveTo(centerX, centerY);
-      ctx.lineTo(sat.x, sat.y);
+      ctx.moveTo(coreProj.x2d, coreProj.y2d);
+      ctx.lineTo(sat.x2d, sat.y2d);
 
-      const grad = ctx.createLinearGradient(centerX, centerY, sat.x, sat.y);
-      grad.addColorStop(0, 'rgba(0, 240, 255, 0.45)');
-      grad.addColorStop(1, sat.isNearCursor ? sat.color : 'rgba(255, 255, 255, 0.12)');
-      
+      const grad = ctx.createLinearGradient(coreProj.x2d, coreProj.y2d, sat.x2d, sat.y2d);
+      grad.addColorStop(0, 'rgba(0, 240, 255, 0.6)');
+      grad.addColorStop(1, sat.isHovered ? sat.color : 'rgba(255, 255, 255, 0.15)');
+
       ctx.strokeStyle = grad;
-      ctx.lineWidth = sat.isNearCursor ? 2 : 1;
-      ctx.setLineDash([4, 4]);
-      ctx.lineDashOffset = -time * 10;
+      ctx.lineWidth = sat.isHovered ? 2.5 : Math.max(0.8, 1.2 * sat.scale);
       ctx.stroke();
+
+      // Traveling data spark along laser
+      const pulseT = (time * 0.8 + sat.theta) % 1;
+      const pulseX = coreProj.x2d + (sat.x2d - coreProj.x2d) * pulseT;
+      const pulseY = coreProj.y2d + (sat.y2d - coreProj.y2d) * pulseT;
+
+      ctx.fillStyle = sat.color;
+      ctx.shadowColor = sat.color;
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(pulseX, pulseY, 2.5 * sat.scale, 0, Math.PI * 2);
+      ctx.fill();
+
       ctx.restore();
     });
 
-    // 4. Draw Traveling Data Packets
-    packets.forEach((packet) => {
-      const targetSat = computedSatellites[packet.satelliteIndex];
-      if (!targetSat) return;
+    // 6. Draw Shockwaves
+    for (let i = shockwaves.length - 1; i >= 0; i--) {
+      const sw = shockwaves[i];
+      sw.radius += 3.5;
+      sw.alpha = 1 - sw.radius / sw.maxRadius;
 
-      packet.progress += packet.speed * packet.direction;
-      if (packet.progress > 1) {
-        packet.progress = 1;
-        packet.direction = -1;
-      } else if (packet.progress < 0) {
-        packet.progress = 0;
-        packet.direction = 1;
+      if (sw.alpha <= 0) {
+        shockwaves.splice(i, 1);
+        continue;
       }
 
-      const px = centerX + (targetSat.x - centerX) * packet.progress;
-      const py = centerY + (targetSat.y - centerY) * packet.progress;
-
       ctx.save();
-      ctx.fillStyle = targetSat.color;
-      ctx.shadowColor = targetSat.color;
-      ctx.shadowBlur = 8;
       ctx.beginPath();
-      ctx.arc(px, py, 2.5, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(0, 240, 255, ${sw.alpha * 0.8})`;
+      ctx.lineWidth = 2;
+      ctx.stroke();
       ctx.restore();
-    });
+    }
 
-    // 5. Draw Orbiting Satellites Nodes
-    computedSatellites.forEach((sat) => {
+    // 7. Draw Satellite Nodes in 3D Depth
+    satellites.forEach((sat) => {
       ctx.save();
+      const nodeR = (sat.isHovered ? 28 : 22) * sat.scale;
 
       // Glow halo
       ctx.shadowColor = sat.color;
-      ctx.shadowBlur = sat.isNearCursor ? 20 : 10;
+      ctx.shadowBlur = sat.isHovered ? 26 : 14;
 
-      // Node base circle
-      ctx.fillStyle = sat.isNearCursor ? '#101725' : '#0c1017';
+      // Node background
+      ctx.fillStyle = sat.isHovered ? '#152136' : '#0a0e16';
       ctx.beginPath();
-      const nodeR = sat.isNearCursor ? sat.radius * 1.15 : sat.radius;
-      ctx.arc(sat.x, sat.y, nodeR, 0, Math.PI * 2);
+      ctx.arc(sat.x2d, sat.y2d, nodeR, 0, Math.PI * 2);
       ctx.fill();
 
-      // Border ring
+      // Cyber Ring border
       ctx.strokeStyle = sat.color;
-      ctx.lineWidth = sat.isNearCursor ? 2.5 : 1.5;
+      ctx.lineWidth = sat.isHovered ? 2.8 : 1.8;
       ctx.stroke();
 
-      // Satellite Label
+      // Label with 3D scaling
       ctx.shadowBlur = 0;
-      ctx.fillStyle = sat.isNearCursor ? '#ffffff' : '#e2e8f0';
-      ctx.font = `600 ${Math.max(10, Math.round(11 * scaleFactor))}px "JetBrains Mono", monospace`;
+      ctx.fillStyle = sat.isHovered ? '#ffffff' : '#e2e8f0';
+      const fontSize = Math.max(9, Math.round((sat.isHovered ? 12 : 11) * sat.scale));
+      ctx.font = `600 ${fontSize}px "JetBrains Mono", monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText(sat.label, sat.x, sat.y);
+      ctx.fillText(sat.label, sat.x2d, sat.y2d);
 
       ctx.restore();
     });
 
-    // 6. Draw Central "GANESH" Node
+    // 8. Draw Central "GANESH" Core
     ctx.save();
 
-    // Pulsing outer ripple ring
-    const pulseSize = 48 + Math.sin(time * 2) * 6;
+    // Pulsing outer halo rings
+    const corePulse = 46 + Math.sin(time * 3) * 6;
     ctx.beginPath();
-    ctx.arc(centerX, centerY, pulseSize, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(0, 240, 255, 0.25)';
+    ctx.arc(coreProj.x2d, coreProj.y2d, corePulse, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(0, 240, 255, 0.35)';
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
-    // Ambient radial glow behind central node
-    const centralGlow = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, 60);
-    centralGlow.addColorStop(0, 'rgba(0, 240, 255, 0.35)');
-    centralGlow.addColorStop(0.6, 'rgba(168, 85, 247, 0.15)');
-    centralGlow.addColorStop(1, 'transparent');
-    ctx.fillStyle = centralGlow;
+    const corePulse2 = 56 + Math.cos(time * 2.2) * 8;
     ctx.beginPath();
-    ctx.arc(centerX, centerY, 60, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.arc(coreProj.x2d, coreProj.y2d, corePulse2, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(176, 91, 251, 0.25)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 6]);
+    ctx.stroke();
 
-    // Central Node Body
+    // Central Core Sphere
+    const radial = ctx.createRadialGradient(coreProj.x2d - 6, coreProj.y2d - 6, 4, coreProj.x2d, coreProj.y2d, 38);
+    radial.addColorStop(0, '#00f0ff');
+    radial.addColorStop(0.4, '#081a30');
+    radial.addColorStop(1, '#03060c');
+
     ctx.shadowColor = '#00f0ff';
-    ctx.shadowBlur = 24;
-    ctx.fillStyle = '#060a12';
+    ctx.shadowBlur = 35;
+    ctx.fillStyle = radial;
     ctx.beginPath();
-    ctx.arc(centerX, centerY, 38, 0, Math.PI * 2);
+    ctx.arc(coreProj.x2d, coreProj.y2d, 36, 0, Math.PI * 2);
     ctx.fill();
 
-    // Central Node Border
     ctx.strokeStyle = '#00f0ff';
     ctx.lineWidth = 2.5;
     ctx.stroke();
 
-    // Central Text: "GANESH"
+    // Core Label: GANESH
     ctx.shadowBlur = 0;
     ctx.fillStyle = '#ffffff';
-    ctx.font = '700 13px "JetBrains Mono", monospace';
+    ctx.font = '800 13px "JetBrains Mono", monospace';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.letterSpacing = '1px';
-    ctx.fillText('GANESH', centerX, centerY);
+    ctx.letterSpacing = '2px';
+    ctx.fillText('GANESH', coreProj.x2d, coreProj.y2d);
 
     ctx.restore();
 
-    animationFrameId = requestAnimationFrame(render);
+    requestAnimationFrame(render);
   }
 
   render();

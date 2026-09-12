@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alaguselvaganesh V — Software Engineer | Full Stack &amp; AI</title>
-  <meta name="description" content="Portfolio of Alaguselvaganesh V, Software Engineering student, Full Stack Developer and Research Assistant working across AI-powered applications and adaptive learning systems.">
+  <meta name="description" content="Portfolio of Alaguselvaganesh V, Software Engineering student at VIT, Full Stack Developer and Research Assistant working across AI-powered applications and adaptive learning systems.">
   <meta name="author" content="Alaguselvaganesh V">
   <meta name="keywords" content="Alaguselvaganesh V, Software Engineer, Full Stack Developer, AI, React, Node.js, Python, Java, VIT, Edge AI">
   
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Alaguselvaganesh V — Software Engineer | Full Stack &amp; AI">
-  <meta property="og:description" content="Portfolio of Alaguselvaganesh V, Software Engineering student, Full Stack Developer and Research Assistant working across AI-powered applications and adaptive learning systems.">
+  <meta property="og:description" content="Portfolio of Alaguselvaganesh V, Software Engineering student at VIT, Full Stack Developer and Research Assistant working across AI-powered applications and adaptive learning systems.">
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300f0ff'>AV</text></svg>">
@@ -21,6 +21,10 @@
 </head>
 <body>
 
+  <!-- Dynamic Cursor Spotlight & Cybernetic Grid Background -->
+  <div class="ambient-spotlight" aria-hidden="true"></div>
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+
   <!-- Custom Magnetic Cursor (Desktop) -->
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
@@ -29,31 +33,31 @@
   <div class="cmd-palette-backdrop" id="cmd-palette" role="dialog" aria-modal="true" aria-label="Command Navigation">
     <div class="cmd-palette-box">
       <div class="cmd-input-row">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" class="cmd-input" id="cmd-search-input" placeholder="Type a command or navigate to section..." autofocus>
+        <input type="text" class="cmd-input" id="cmd-search-input" placeholder="Search sections, projects, or view resume..." autofocus>
         <span class="cmd-key">ESC</span>
       </div>
       <div class="cmd-list">
         <div class="cmd-item" data-target="#work">
           <span>01. What I Build</span>
-          <span class="cmd-tag">Jump to section</span>
+          <span class="cmd-tag">Full Stack &amp; AI</span>
         </div>
         <div class="cmd-item" data-target="#experience">
           <span>02. Work Experience (CopterCode &amp; VIT)</span>
-          <span class="cmd-tag">Timeline</span>
+          <span class="cmd-tag">Career Milestones</span>
         </div>
         <div class="cmd-item" data-target="#projects">
-          <span>03. Featured Projects &amp; Demos</span>
-          <span class="cmd-tag">Interactive Case Studies</span>
+          <span>03. Featured Projects &amp; Simulators</span>
+          <span class="cmd-tag">Observer • E-Farm • ML</span>
         </div>
         <div class="cmd-item" data-target="#research">
           <span>04. Research / Edge Intelligence (Patent)</span>
-          <span class="cmd-tag">Lab &amp; Latency Gauge</span>
+          <span class="cmd-tag">On-Device AI</span>
         </div>
         <div class="cmd-item" data-target="#skills">
-          <span>05. Technical Stack</span>
+          <span>05. Engineering Stack</span>
           <span class="cmd-tag">Languages &amp; Frameworks</span>
         </div>
         <div class="cmd-item" data-target="#education">
@@ -62,11 +66,11 @@
         </div>
         <div class="cmd-item" data-target="#contact">
           <span>07. Contact &amp; Inquiries</span>
-          <span class="cmd-tag">Get in Touch</span>
+          <span class="cmd-tag">Direct Channels</span>
         </div>
         <div class="cmd-item" data-target="resume">
-          <span style="color:#00f0ff">08. View / Download Resume</span>
-          <span class="cmd-tag">PDF Document</span>
+          <span style="color:#00f0ff; font-weight:600;">08. View / Download Resume</span>
+          <span class="cmd-tag">Official PDF</span>
         </div>
       </div>
     </div>
@@ -83,22 +87,33 @@
         </div>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <ul class="nav-menu">
-        <li><a href="#work" class="nav-link">Work</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+      <!-- Desktop Nav Links with Glass Capsule -->
+      <nav class="nav-menu-wrapper" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#research" class="nav-link">Research</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
 
       <!-- Nav Actions -->
       <div class="nav-actions">
+        <!-- Tactile Sound Effect Toggle -->
+        <button class="btn-sound-toggle" id="btn-sound-toggle" aria-label="Toggle sci-fi sound effects">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <span>SFX: OFF</span>
+        </button>
+
+        <!-- Command Palette Trigger -->
         <button class="btn-cmd" aria-label="Open command palette">
           <span class="cmd-key">⌘K</span>
           <span>Search</span>
         </button>
+
+        <!-- Resume Action -->
         <button class="btn btn-primary btn-sm btn-view-resume">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -107,7 +122,9 @@
           </svg>
           <span>Resume</span>
         </button>
-        <button class="btn-mobile-toggle" id="btn-mobile-toggle" aria-label="Toggle mobile menu">
+
+        <!-- Mobile Menu Toggle -->
+        <button class="btn-mobile-toggle" id="btn-mobile-toggle" aria-label="Toggle mobile navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -125,14 +142,14 @@
     <a href="#skills">05. Skills</a>
     <a href="#education">06. Education</a>
     <a href="#contact">07. Contact</a>
-    <div style="margin-top:20px; display:flex; gap:12px; flex-direction:column;">
+    <div style="margin-top:20px; display:flex; gap:14px; flex-direction:column;">
       <button class="btn btn-primary btn-view-resume">View / Download Resume (PDF)</button>
       <a href="mailto:alaguselvaganesh2000@gmail.com" class="btn btn-outline">Direct Email</a>
     </div>
   </div>
 
   <!-- DOCKED SYSTEM STATUS HUD WIDGET -->
-  <aside class="system-status-hud" aria-label="System status">
+  <aside class="system-status-hud" aria-label="Live system status">
     <div class="hud-item">
       <span class="status-dot"></span>
       <span class="hud-label">PORTFOLIO:</span>
@@ -146,7 +163,7 @@
     <div class="hud-divider"></div>
     <div class="hud-item">
       <span class="hud-label">RESEARCH:</span>
-      <span class="hud-val" style="color:#c084fc;">ACTIVE (EDGE AI)</span>
+      <span class="hud-val purple">ACTIVE (EDGE AI)</span>
     </div>
     <div class="hud-divider"></div>
     <div class="hud-item">
@@ -169,7 +186,7 @@
         <div class="hero-grid">
           <!-- Text Content -->
           <div class="hero-content">
-            <div class="hero-eyebrow">
+            <div class="section-eyebrow">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
@@ -177,12 +194,32 @@
             </div>
 
             <h1 class="hero-title">
-              Building <span class="highlight">intelligent</span><br>software systems.
+              Building <span class="shimmer-text">intelligent</span><br>software systems.
             </h1>
 
             <p class="hero-subtitle">
               Integrated M.Tech Software Engineering student at VIT, building full-stack applications, AI-powered learning systems, and adaptive software.
             </p>
+
+            <!-- Holographic Telemetry Chips -->
+            <div class="hero-telemetry-row">
+              <div class="telemetry-chip">
+                <span>⚡ Latency:</span>
+                <strong>12ms On-Device</strong>
+              </div>
+              <div class="telemetry-chip">
+                <span>🛡️ Security:</span>
+                <strong>JWT &amp; RBAC</strong>
+              </div>
+              <div class="telemetry-chip purple">
+                <span>✦ Research:</span>
+                <strong>Patent Under Filing</strong>
+              </div>
+              <div class="telemetry-chip">
+                <span>🧠 AI Core:</span>
+                <strong>Google Gemini</strong>
+              </div>
+            </div>
 
             <div class="hero-ctas">
               <a href="#projects" class="btn btn-primary">
@@ -211,11 +248,14 @@
             </div>
           </div>
 
-          <!-- Interactive Engineering Visual (Canvas Graph) -->
+          <!-- Interactive 3D Holographic Constellation Canvas -->
           <div class="hero-visual-wrapper">
             <div class="canvas-container">
               <canvas id="hero-canvas"></canvas>
-              <div class="canvas-hint">Interactive Core Graph • Move cursor or drag nodes</div>
+              <div class="canvas-controls-overlay">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
+                <span>3D Constellation • Drag to Rotate • Click to Pulse</span>
+              </div>
             </div>
           </div>
         </div>
@@ -229,21 +269,26 @@
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">
-            <span>01 — DOMAIN CAPABILITIES</span>
+            <span>01 — DOMAIN ARCHITECTURE</span>
           </div>
           <h2 class="section-title">What I Build</h2>
           <p class="section-subtitle">
-            Engineering robust digital systems from database architectures and scalable backends to client-side real-time experiences and edge machine learning.
+            Scalable engineering solutions from distributed backend architectures and real-time streaming to adaptive on-device machine learning.
           </p>
         </div>
 
         <div class="what-i-build-grid">
           <!-- Item 01 -->
-          <div class="build-card">
+          <div class="tilt-card build-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="build-card-top">
               <span class="build-num">01</span>
               <div class="build-icon-wrap">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
                   <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
                   <line x1="6" y1="6" x2="6.01" y2="6"></line>
@@ -256,17 +301,22 @@
               Scalable web applications with authentication, APIs, databases and real-time functionality.
             </p>
             <div class="build-card-footer">
-              <span>Node.js • Express • PostgreSQL • MongoDB</span>
+              <span>Node.js • Express.js • PostgreSQL • Prisma • MinIO</span>
               <span>→</span>
             </div>
           </div>
 
           <!-- Item 02 -->
-          <div class="build-card">
+          <div class="tilt-card build-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="build-card-top">
               <span class="build-num">02</span>
               <div class="build-icon-wrap">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
                 </svg>
               </div>
@@ -276,17 +326,22 @@
               Intelligent features using modern AI models to create personalized and adaptive experiences.
             </p>
             <div class="build-card-footer">
-              <span>Google Gemini AI • Dynamic Quizzing • AI Tutors</span>
+              <span>Google Gemini AI • Dynamic Quizzes • AI Tutors</span>
               <span>→</span>
             </div>
           </div>
 
           <!-- Item 03 -->
-          <div class="build-card">
+          <div class="tilt-card build-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="build-card-top">
               <span class="build-num">03</span>
               <div class="build-icon-wrap">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                   <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                 </svg>
@@ -297,17 +352,22 @@
               Platforms for courses, assessments, virtual classrooms and personalized learning.
             </p>
             <div class="build-card-footer">
-              <span>LiveKit WebRTC • MinIO Storage • Prisma ORM</span>
+              <span>LiveKit WebRTC • JWT Auth • Progress Tracking</span>
               <span>→</span>
             </div>
           </div>
 
           <!-- Item 04 -->
-          <div class="build-card">
+          <div class="tilt-card build-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="build-card-top">
               <span class="build-num">04</span>
               <div class="build-icon-wrap">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
                   <rect x="9" y="9" width="6" height="6"></rect>
                   <line x1="9" y1="1" x2="9" y2="4"></line>
@@ -326,7 +386,7 @@
               Exploring on-device intelligence and low-latency adaptive learning systems.
             </p>
             <div class="build-card-footer">
-              <span>Patent Under Filing • On-Device Inference • Low Latency</span>
+              <span>Patent Under Filing • ~12ms Latency • Offline-First</span>
               <span>→</span>
             </div>
           </div>
@@ -345,7 +405,7 @@
           </div>
           <h2 class="section-title">Experience</h2>
           <p class="section-subtitle">
-            Hands-on software development across enterprise learning infrastructure and academic patent-pending research.
+            Enterprise software development across scalable learning infrastructure and academic patent-pending research.
           </p>
         </div>
 
@@ -353,7 +413,12 @@
           <!-- Entry 01: CopterCode -->
           <div class="timeline-item">
             <div class="timeline-marker"></div>
-            <div class="experience-card">
+            <div class="tilt-card experience-card">
+              <div class="hud-corner hud-tl"></div>
+              <div class="hud-corner hud-tr"></div>
+              <div class="hud-corner hud-bl"></div>
+              <div class="hud-corner hud-br"></div>
+
               <div class="card-header-row">
                 <div>
                   <h3 class="exp-role">Full Stack Developer Intern</h3>
@@ -392,10 +457,15 @@
           <!-- Entry 02: VIT Research Assistant -->
           <div class="timeline-item research-patent">
             <div class="timeline-marker"></div>
-            <div class="experience-card patent-card">
+            <div class="tilt-card experience-card patent-card">
+              <div class="hud-corner hud-tl"></div>
+              <div class="hud-corner hud-tr"></div>
+              <div class="hud-corner hud-bl"></div>
+              <div class="hud-corner hud-br"></div>
+
               <div class="card-header-row">
                 <div>
-                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
                     <h3 class="exp-role">Research Assistant</h3>
                     <span class="patent-badge">PATENT UNDER FILING</span>
                   </div>
@@ -439,17 +509,22 @@
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">
-            <span>03 — FEATURED WORK</span>
+            <span>03 — FEATURED CASE STUDIES</span>
           </div>
           <h2 class="section-title">Engineered Projects</h2>
           <p class="section-subtitle">
-            Interactive software systems emphasizing architectural decoupling, full-stack transactional workflows, and machine learning pipelines.
+            Deep-dive into production-ready software architectures with live interactive hardware-accelerated simulators.
           </p>
         </div>
 
         <div class="projects-container">
           <!-- PROJECT 01: Observer Pattern Voting System -->
-          <article class="project-panel" id="project-voting">
+          <article class="tilt-card project-panel" id="project-voting">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="project-info">
               <div>
                 <div class="project-header-meta">
@@ -463,15 +538,15 @@
 
                 <div class="project-features">
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>Publisher-subscriber architecture with central VoteSubject broadcasting to registered Observers.</span>
                   </div>
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>Live result dashboard &amp; audit log synchronized without costly polling.</span>
                   </div>
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>SOLID design principles, modular code, and unit tests simulating concurrent voting scenarios.</span>
                   </div>
                 </div>
@@ -489,10 +564,10 @@
                 <div class="project-actions">
                   <button class="btn btn-primary btn-sm btn-open-project-modal" data-project="voting-system">
                     <span>View Case Study</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </button>
                   <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
                     <span>vasganesh on GitHub</span>
@@ -506,79 +581,100 @@
               <div class="sim-box">
                 <div class="sim-header">
                   <span class="sim-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-                    Live Observer Pattern Dispatcher
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    Observer Pattern Event Stream
                   </span>
                   <span class="sim-status">
                     <span class="status-dot"></span>
-                    <span>VoteSubject Active</span>
+                    <span>VoteSubject Connected</span>
                   </span>
                 </div>
 
-                <div class="observer-sim-grid">
-                  <!-- Vote Casting triggers -->
-                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">
-                    Click to cast ballot (Fires VoteSubject.notify()):
+                <!-- Animated Electrical Topology Wire Graph -->
+                <div class="observer-visual-nodes">
+                  <div class="obs-node-box" id="obs-subject-node">
+                    <span style="color:var(--cyan); font-weight:800;">VoteSubject</span><br>
+                    <span style="font-size:0.68rem; color:var(--text-muted)">State Core</span>
                   </div>
-                  <div class="vote-controls">
-                    <button class="btn-vote" data-candidate="A">+ Candidate A</button>
-                    <button class="btn-vote" data-candidate="B">+ Candidate B</button>
-                    <button class="btn-vote" data-candidate="C">+ Candidate C</button>
+                  <div class="obs-wire-pulse"></div>
+                  <div class="obs-node-box" id="obs-dash-node">
+                    <span style="color:#fff; font-weight:700;">Dashboard</span><br>
+                    <span style="font-size:0.68rem; color:var(--text-muted)">Observer 1</span>
+                  </div>
+                  <div class="obs-wire-pulse"></div>
+                  <div class="obs-node-box" id="obs-audit-node">
+                    <span style="color:#fff; font-weight:700;">AuditLog</span><br>
+                    <span style="font-size:0.68rem; color:var(--text-muted)">Observer 2</span>
+                  </div>
+                </div>
+
+                <!-- Vote Casting triggers -->
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
+                  Cast ballot (Dispatches event to Observers):
+                </div>
+                <div class="vote-controls">
+                  <button class="btn-vote" data-candidate="A">+ Vote Candidate A</button>
+                  <button class="btn-vote" data-candidate="B">+ Vote Candidate B</button>
+                  <button class="btn-vote" data-candidate="C">+ Vote Candidate C</button>
+                </div>
+
+                <!-- Observer 1: Live Result Dashboard -->
+                <div class="vote-results-chart">
+                  <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.78rem; font-weight:700; color:#fff; margin-bottom:4px;">
+                    <span>Observer 01: Result Dashboard</span>
+                    <span>Total Ballots: <span id="total-votes-count" style="color:var(--cyan)">100</span></span>
                   </div>
 
-                  <!-- Observer 1: Live Result Dashboard -->
-                  <div class="vote-results-chart">
-                    <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.75rem; font-weight:600; color:var(--text-primary); margin-bottom:4px;">
-                      <span>Observer 01: Result Dashboard</span>
-                      <span>Total: <span id="total-votes-count">100</span></span>
+                  <div class="chart-bar-row">
+                    <div class="chart-bar-labels">
+                      <span>Candidate A</span>
+                      <span id="vote-count-a">42 votes (42.0%)</span>
                     </div>
-
-                    <div class="chart-bar-row">
-                      <div class="chart-bar-labels">
-                        <span>Candidate A</span>
-                        <span id="vote-count-a">42 votes</span>
-                      </div>
-                      <div class="chart-bar-track">
-                        <div class="chart-bar-fill" id="bar-fill-a" style="width: 42%;"></div>
-                      </div>
-                    </div>
-
-                    <div class="chart-bar-row">
-                      <div class="chart-bar-labels">
-                        <span>Candidate B</span>
-                        <span id="vote-count-b">35 votes</span>
-                      </div>
-                      <div class="chart-bar-track">
-                        <div class="chart-bar-fill" id="bar-fill-b" style="width: 35%;"></div>
-                      </div>
-                    </div>
-
-                    <div class="chart-bar-row">
-                      <div class="chart-bar-labels">
-                        <span>Candidate C</span>
-                        <span id="vote-count-c">23 votes</span>
-                      </div>
-                      <div class="chart-bar-track">
-                        <div class="chart-bar-fill" id="bar-fill-c" style="width: 23%;"></div>
-                      </div>
+                    <div class="chart-bar-track">
+                      <div class="chart-bar-fill" id="bar-fill-a" style="width: 42%;"></div>
                     </div>
                   </div>
 
-                  <!-- Observer 2: Audit Log Stream -->
-                  <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);">
-                    Observer 02: Synchronized Audit Log Stream
+                  <div class="chart-bar-row">
+                    <div class="chart-bar-labels">
+                      <span>Candidate B</span>
+                      <span id="vote-count-b">35 votes (35.0%)</span>
+                    </div>
+                    <div class="chart-bar-track">
+                      <div class="chart-bar-fill" id="bar-fill-b" style="width: 35%;"></div>
+                    </div>
                   </div>
-                  <div class="sim-audit-log" id="voting-audit-stream">
-                    <p><span class="log-highlight">[12:00:00.120]</span> VoteSubject initialized with 2 registered Observers.</p>
-                    <p><span class="log-highlight">[12:00:01.450]</span> Ballot cast for Candidate A. Observers updated.</p>
+
+                  <div class="chart-bar-row">
+                    <div class="chart-bar-labels">
+                      <span>Candidate C</span>
+                      <span id="vote-count-c">23 votes (23.0%)</span>
+                    </div>
+                    <div class="chart-bar-track">
+                      <div class="chart-bar-fill" id="bar-fill-c" style="width: 23%;"></div>
+                    </div>
                   </div>
+                </div>
+
+                <!-- Observer 2: Audit Log Stream -->
+                <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-muted); margin:12px 0 6px 0;">
+                  Observer 02: Synchronized Cryptographic Audit Stream
+                </div>
+                <div class="sim-audit-log" id="voting-audit-stream">
+                  <p><span class="log-highlight">[12:00:00.120]</span> VoteSubject initialized with 2 registered Observers.</p>
+                  <p><span class="log-highlight">[12:00:01.450]</span> Ballot cast for Candidate A. Observers updated.</p>
                 </div>
               </div>
             </div>
           </article>
 
           <!-- PROJECT 02: E-Farm Platform -->
-          <article class="project-panel" id="project-efarm">
+          <article class="tilt-card project-panel" id="project-efarm">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="project-info">
               <div>
                 <div class="project-header-meta">
@@ -592,15 +688,15 @@
 
                 <div class="project-features">
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>Relational MySQL schema managing products, categories, orders, and user roles with referential integrity.</span>
                   </div>
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>Role-based access control separating farmer (listing, inventory) and consumer (browsing, ordering) workflows.</span>
                   </div>
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>End-to-end order management: cart, checkout, order tracking, and category/location-based filtering.</span>
                   </div>
                 </div>
@@ -618,10 +714,10 @@
                 <div class="project-actions">
                   <button class="btn btn-primary btn-sm btn-open-project-modal" data-project="efarm-platform">
                     <span>View Case Study</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </button>
                   <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
                     <span>vasganesh on GitHub</span>
@@ -635,8 +731,8 @@
               <div class="sim-box">
                 <div class="sim-header">
                   <span class="sim-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                    E-Farm Role-Based Portal
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    E-Farm Role-Based Workspace
                   </span>
                   <div class="efarm-tabs">
                     <button class="tab-btn active" data-tab="consumer">Consumer View</button>
@@ -646,7 +742,7 @@
 
                 <!-- Consumer Marketplace View -->
                 <div class="efarm-view-panel active" id="efarm-view-consumer">
-                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-family:var(--font-mono); font-size:0.75rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-family:var(--font-mono); font-size:0.78rem;">
                     <span>Direct Farm Fresh Produce</span>
                     <span style="color:var(--cyan)">Cart: <strong id="efarm-cart-count">1</strong> items</span>
                   </div>
@@ -654,47 +750,47 @@
                   <div class="efarm-items-grid">
                     <div class="efarm-item-card">
                       <div class="efarm-item-name">Organic Basmati Rice</div>
-                      <div class="efarm-item-price">₹65 / kg • Thanjavur</div>
+                      <div class="efarm-item-price">₹65 / kg • Thanjavur Hub</div>
                       <button class="btn-add-cart">+ Add to Cart</button>
                     </div>
                     <div class="efarm-item-card">
                       <div class="efarm-item-name">Farm Fresh Tomatoes</div>
-                      <div class="efarm-item-price">₹28 / kg • Salem</div>
+                      <div class="efarm-item-price">₹28 / kg • Salem Farm</div>
                       <button class="btn-add-cart">+ Add to Cart</button>
                     </div>
                   </div>
 
-                  <div style="display:flex; gap:10px; margin-bottom:12px;">
-                    <button class="btn btn-primary btn-sm" id="btn-efarm-checkout" style="flex:1; padding:8px;">
+                  <div style="display:flex; gap:10px; margin-bottom:14px;">
+                    <button class="btn btn-primary btn-sm" id="btn-efarm-checkout" style="flex:1; padding:9px;">
                       Simulate Instant Checkout
                     </button>
                   </div>
 
                   <div class="efarm-order-status" id="efarm-order-status-box">
                     <span>Order #EF-8291: In Transit</span>
-                    <span style="color:#00f0ff">Payment: Escrow Released</span>
+                    <span style="color:#00f0ff">Payment: Escrow Locked</span>
                   </div>
                 </div>
 
                 <!-- Farmer Inventory View -->
                 <div class="efarm-view-panel" id="efarm-view-farmer">
-                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom:10px;">
-                    Farmer Inventory &amp; Listing Dashboard:
+                  <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-muted); margin-bottom:10px;">
+                    Farmer Inventory &amp; Direct Marketplace Publisher:
                   </div>
 
-                  <div style="display:grid; grid-template-columns: 1fr 80px; gap:8px; margin-bottom:10px;">
-                    <input type="text" id="farmer-item-name" class="form-input" placeholder="Crop name (e.g. Millet)" style="padding:6px 10px; font-size:0.8rem;">
-                    <input type="number" id="farmer-item-price" class="form-input" placeholder="₹/kg" value="45" style="padding:6px 10px; font-size:0.8rem;">
+                  <div style="display:grid; grid-template-columns: 1fr 90px; gap:10px; margin-bottom:12px;">
+                    <input type="text" id="farmer-item-name" class="form-input" placeholder="Crop name (e.g. Finger Millet)" style="padding:8px 12px; font-size:0.84rem;">
+                    <input type="number" id="farmer-item-price" class="form-input" placeholder="₹/kg" value="45" style="padding:8px 12px; font-size:0.84rem;">
                   </div>
-                  <button class="btn btn-outline btn-sm" id="btn-farmer-add-item" style="width:100%; margin-bottom:12px; padding:6px;">
+                  <button class="btn btn-outline btn-sm" id="btn-farmer-add-item" style="width:100%; margin-bottom:14px; padding:8px;">
                     + Publish Direct Listing to MySQL
                   </button>
 
-                  <div style="display:flex; flex-direction:column; gap:6px;" id="farmer-inventory-list">
-                    <div class="channel-row" style="padding:8px 12px;">
+                  <div style="display:flex; flex-direction:column; gap:8px;" id="farmer-inventory-list">
+                    <div class="channel-row" style="padding:10px 14px;">
                       <div class="channel-info">
-                        <span class="channel-val" style="font-size:0.85rem">Groundnut</span>
-                        <span class="channel-label">Stock: 250 kg • Vellore Hub</span>
+                        <span class="channel-val" style="font-size:0.9rem">Groundnut</span>
+                        <span class="channel-label">Stock: 250 kg • Vellore Direct</span>
                       </div>
                       <span class="hud-val green">₹72/kg</span>
                     </div>
@@ -705,7 +801,12 @@
           </article>
 
           <!-- PROJECT 03: Crop Weather Prediction System -->
-          <article class="project-panel" id="project-crop">
+          <article class="tilt-card project-panel" id="project-crop">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="project-info">
               <div>
                 <div class="project-header-meta">
@@ -719,15 +820,15 @@
 
                 <div class="project-features">
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>Trained and benchmarked multiple Scikit-learn classification models (Decision Tree, Random Forest) for crop recommendation.</span>
                   </div>
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>Feature engineering and selection to isolate influential agro-climatic variables, boosting generalization.</span>
                   </div>
                   <div class="feat-point">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     <span>Hyperparameter tuning via cross-validation to reduce overfitting and improve prediction reliability.</span>
                   </div>
                 </div>
@@ -746,10 +847,10 @@
                 <div class="project-actions">
                   <button class="btn btn-primary btn-sm btn-open-project-modal" data-project="crop-ml">
                     <span>View Case Study</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </button>
                   <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
                     <span>vasganesh on GitHub</span>
@@ -763,11 +864,11 @@
               <div class="sim-box">
                 <div class="sim-header">
                   <span class="sim-title">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
                     ML Inference Engine Simulator
                   </span>
                   <span class="sim-status" style="color:var(--purple)">
-                    <span class="status-dot" style="background:var(--purple); box-shadow:0 0 8px var(--purple)"></span>
+                    <span class="status-dot" style="background:var(--purple); box-shadow:0 0 10px var(--purple)"></span>
                     <span>Scikit Pipeline</span>
                   </span>
                 </div>
@@ -806,17 +907,17 @@
                   </div>
                 </div>
 
-                <!-- Predicted Output -->
+                <!-- Predicted Output Card -->
                 <div class="prediction-output-card">
                   <div>
-                    <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">
+                    <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--text-muted); text-transform:uppercase;">
                       Optimal Crop Recommendation:
                     </div>
                     <div class="crop-pred-name" id="pred-crop-name">Rice (Paddy)</div>
                   </div>
                   <div style="text-align:right;">
-                    <div class="crop-pred-conf" id="pred-rf-confidence">Random Forest: 98.2% Match</div>
-                    <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);" id="pred-dt-confidence">Decision Tree: 93.4%</div>
+                    <div class="crop-pred-conf" id="pred-rf-confidence">Random Forest: 98.4% Confidence</div>
+                    <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);" id="pred-dt-confidence">Decision Tree: 93.6%</div>
                   </div>
                 </div>
               </div>
@@ -829,7 +930,7 @@
     <!-- ==========================================================================
          RESEARCH SECTION (EDGE ARTIFICIAL INTELLIGENCE LAB)
          ========================================================================== -->
-    <section class="section research-section" id="research">
+    <section class="section" id="research">
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow purple">
@@ -841,7 +942,12 @@
           </p>
         </div>
 
-        <div class="research-lab-card">
+        <div class="tilt-card research-lab-card">
+          <div class="hud-corner hud-tl"></div>
+          <div class="hud-corner hud-tr"></div>
+          <div class="hud-corner hud-bl"></div>
+          <div class="hud-corner hud-br"></div>
+
           <div class="research-meta-tags">
             <span class="research-tag">PATENT UNDER FILING</span>
             <span class="research-tag cyan">ON-DEVICE INFERENCE</span>
@@ -850,15 +956,21 @@
             <span class="research-tag">CLOUD-INDEPENDENT</span>
           </div>
 
-          <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); max-width:860px;">
+          <p style="font-size:1.1rem; line-height:1.8; color:var(--text-secondary); max-width:920px;">
             Researching and co-developing a patent-pending <strong>Self-Adaptive Personalized Learning Framework Using Edge Artificial Intelligence</strong> for on-device, low-latency adaptive learning. The architecture explores edge-based model deployment strategies to enable personalized content delivery independent of continuous cloud connectivity, improving accessibility and responsiveness across diverse learner profiles.
           </p>
 
           <!-- Interactive System Architecture Flow Diagram -->
           <div class="research-diagram-wrapper">
-            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.08em;">
-              Framework Dataflow Pipeline
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+              <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">
+                Framework Dataflow Pipeline
+              </span>
+              <button class="btn btn-outline btn-sm" id="btn-run-latency-race" style="padding:6px 14px; font-size:0.78rem;">
+                ⚡ Run Live Latency Benchmark
+              </button>
             </div>
+
             <div class="system-flow-diagram">
               <div class="flow-node">
                 <div class="node-title">01. Learner</div>
@@ -885,26 +997,51 @@
                 <div class="node-sub">Personalized Delivery</div>
               </div>
             </div>
+
+            <!-- Live Latency Benchmark Comparison Race Bars -->
+            <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border-subtle);">
+              <div style="display:flex; flex-direction:column; gap:14px;">
+                <div>
+                  <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.78rem; margin-bottom:4px;">
+                    <span style="color:var(--cyan); font-weight:700;">Edge AI Local Pipeline</span>
+                    <span id="benchmark-label-edge" style="color:var(--cyan)">12ms (Target)</span>
+                  </div>
+                  <div class="chart-bar-track" style="height:8px;">
+                    <div class="chart-bar-fill" id="benchmark-bar-edge" style="width: 100%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.78rem; margin-bottom:4px;">
+                    <span style="color:var(--text-muted);">Conventional Cloud Roundtrip</span>
+                    <span id="benchmark-label-cloud" style="color:var(--text-muted)">320ms (Cloud Latency)</span>
+                  </div>
+                  <div class="chart-bar-track" style="height:8px;">
+                    <div class="chart-bar-fill" id="benchmark-bar-cloud" style="width: 35%; background: var(--text-dim);"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Latency Gauge Comparison -->
+          <!-- Latency Gauge Comparison Cards -->
           <div class="latency-comparison">
             <div class="latency-metric-card highlight">
               <div>
-                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); text-transform:uppercase; margin-bottom:4px;">
+                <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--cyan); text-transform:uppercase; margin-bottom:4px;">
                   Edge AI Framework (Proposed)
                 </div>
-                <div style="font-size:0.85rem; color:var(--text-secondary);">Zero cloud round-trip delay, 100% offline availability</div>
+                <div style="font-size:0.88rem; color:var(--text-secondary);">Zero cloud round-trip delay, 100% offline availability</div>
               </div>
               <div class="lat-num">~12 ms</div>
             </div>
 
             <div class="latency-metric-card">
               <div>
-                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:4px;">
+                <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:4px;">
                   Conventional Cloud Roundtrip
                 </div>
-                <div style="font-size:0.85rem; color:var(--text-muted);">Prone to network jitter &amp; server latency</div>
+                <div style="font-size:0.88rem; color:var(--text-muted);">Prone to network jitter &amp; server latency</div>
               </div>
               <div class="lat-num cloud">~320 ms</div>
             </div>
@@ -920,20 +1057,25 @@
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">
-            <span>05 — CORE COMPETENCIES</span>
+            <span>05 — TECHNICAL COMPETENCIES</span>
           </div>
           <h2 class="section-title">Engineering Stack</h2>
           <p class="section-subtitle">
-            Languages, frameworks, databases, and tooling strictly verified from hands-on production and academic research experience. Hover over cards to highlight cross-stack synergy.
+            Languages, frameworks, databases, and tooling strictly verified from hands-on production and academic research experience. Hover over skills to illuminate cross-stack dependencies.
           </p>
         </div>
 
         <div class="skills-grid">
           <!-- Group 1: Languages -->
-          <div class="skills-group-card">
+          <div class="tilt-card skills-group-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="skills-group-header">
               <div class="skills-group-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
               </div>
               <div class="skills-group-title">Languages</div>
             </div>
@@ -948,10 +1090,15 @@
           </div>
 
           <!-- Group 2: Frameworks & Libraries -->
-          <div class="skills-group-card">
+          <div class="tilt-card skills-group-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="skills-group-header">
               <div class="skills-group-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
               </div>
               <div class="skills-group-title">Frameworks &amp; Libraries</div>
             </div>
@@ -965,10 +1112,15 @@
           </div>
 
           <!-- Group 3: Databases -->
-          <div class="skills-group-card">
+          <div class="tilt-card skills-group-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="skills-group-header">
               <div class="skills-group-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
               </div>
               <div class="skills-group-title">Databases</div>
             </div>
@@ -979,10 +1131,15 @@
           </div>
 
           <!-- Group 4: Tools & Frameworks -->
-          <div class="skills-group-card">
+          <div class="tilt-card skills-group-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div class="skills-group-header">
               <div class="skills-group-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
               </div>
               <div class="skills-group-title">Tools &amp; Frameworks</div>
             </div>
@@ -1004,18 +1161,23 @@
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">
-            <span>06 — CREDENTIALS</span>
+            <span>06 — CREDENTIALS &amp; DEGREE</span>
           </div>
           <h2 class="section-title">Education &amp; Certifications</h2>
           <p class="section-subtitle">
-            Formal engineering degree credentials and industry-recognized certifications.
+            Formal engineering degree credentials and industry-recognized cloud certifications.
           </p>
         </div>
 
         <div class="edu-cert-grid">
           <!-- Education Card -->
-          <div class="edu-card">
-            <div class="section-eyebrow" style="margin-bottom:16px;">
+          <div class="tilt-card edu-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
+            <div class="section-eyebrow" style="margin-bottom:18px;">
               <span>DEGREE PROGRAM</span>
             </div>
             <h3 class="edu-institution">Vellore Institute of Technology</h3>
@@ -1032,8 +1194,13 @@
           </div>
 
           <!-- Certifications Card -->
-          <div class="cert-card">
-            <div class="section-eyebrow" style="margin-bottom:16px;">
+          <div class="tilt-card cert-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
+            <div class="section-eyebrow" style="margin-bottom:18px;">
               <span>VERIFIED CERTIFICATIONS</span>
             </div>
 
@@ -1042,7 +1209,7 @@
               <div class="cert-item oracle">
                 <div class="cert-issuer">Oracle University • Cloud &amp; Infrastructure</div>
                 <div class="cert-name">Oracle Cloud Infrastructure 2025 Certified DevOps Professional</div>
-                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-secondary); margin-top:8px;">
+                <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); margin-top:10px;">
                   Key competence: CI/CD automation, cloud infrastructure deployment, and container orchestration.
                 </div>
               </div>
@@ -1051,7 +1218,7 @@
               <div class="cert-item">
                 <div class="cert-issuer" style="color:var(--cyan);">Udemy</div>
                 <div class="cert-name">The Complete Python Pro Bootcamp</div>
-                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-secondary); margin-top:8px;">
+                <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-secondary); margin-top:10px;">
                   Key competence: OOP, algorithmic problem solving, automated scripting, and web development.
                 </div>
               </div>
@@ -1062,7 +1229,7 @@
     </section>
 
     <!-- ==========================================================================
-         ABOUT / PROFILE SECTION
+         ABOUT / PHILOSOPHY SECTION
          ========================================================================== -->
     <section class="section" id="about">
       <div class="container">
@@ -1073,7 +1240,12 @@
           <h2 class="section-title">Engineering Philosophy</h2>
         </div>
 
-        <div class="about-box">
+        <div class="tilt-card about-box">
+          <div class="hud-corner hud-tl"></div>
+          <div class="hud-corner hud-tr"></div>
+          <div class="hud-corner hud-bl"></div>
+          <div class="hud-corner hud-br"></div>
+
           <div class="about-body">
             <p>
               I am a Software Engineering student at Vellore Institute of Technology working across full-stack development, AI-powered applications, and adaptive learning research.
@@ -1122,10 +1294,15 @@
 
         <div class="contact-grid">
           <!-- Direct Channels Card -->
-          <div class="contact-direct-card">
+          <div class="tilt-card contact-direct-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
             <div>
-              <h3 style="font-size:1.35rem; margin-bottom:8px;">Direct Contact Information</h3>
-              <p style="font-size:0.92rem; color:var(--text-muted);">
+              <h3 style="font-size:1.45rem; margin-bottom:8px; color:#fff;">Direct Contact Channels</h3>
+              <p style="font-size:0.95rem; color:var(--text-muted);">
                 Feel free to connect via direct email, phone, or professional profiles.
               </p>
 
@@ -1168,10 +1345,10 @@
               </div>
             </div>
 
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <div style="display:flex; gap:14px; flex-wrap:wrap;">
               <a href="mailto:alaguselvaganesh2000@gmail.com" class="btn btn-primary" style="flex:1;">
                 <span>Email Me</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </a>
               <button class="btn btn-outline btn-view-resume">
                 <span>View Resume</span>
@@ -1180,9 +1357,14 @@
           </div>
 
           <!-- Message Form Card -->
-          <div class="contact-form-card">
-            <h3 style="font-size:1.35rem; margin-bottom:8px;">Send a Message</h3>
-            <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:24px;">
+          <div class="tilt-card contact-form-card">
+            <div class="hud-corner hud-tl"></div>
+            <div class="hud-corner hud-tr"></div>
+            <div class="hud-corner hud-bl"></div>
+            <div class="hud-corner hud-br"></div>
+
+            <h3 style="font-size:1.45rem; margin-bottom:8px; color:#fff;">Send a Direct Note</h3>
+            <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:28px;">
               Leave a note for software engineering inquiries, collaborations, or technical discussions.
             </p>
 
@@ -1204,7 +1386,7 @@
 
               <button type="submit" class="btn btn-primary" style="width:100%;">
                 <span>Send Message</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </button>
 
               <div class="form-status-msg" id="contact-form-success"></div>
@@ -1262,15 +1444,15 @@
        MODAL 2: RESUME PREVIEW & DOWNLOAD
        ========================================================================== -->
   <div class="modal-backdrop" id="resume-modal" role="dialog" aria-modal="true" aria-label="Resume Document">
-    <div class="modal-container" style="max-width:920px;">
+    <div class="modal-container" style="max-width:960px;">
       <div class="modal-header">
         <div>
-          <span class="section-eyebrow" style="margin-bottom:4px; padding:3px 10px; font-size:0.72rem;">OFFICIAL RESUME</span>
+          <span class="section-eyebrow" style="margin-bottom:4px; padding:4px 12px; font-size:0.75rem;">OFFICIAL RESUME</span>
           <h3 class="modal-title">Alaguselvaganesh V — Curriculum Vitae</h3>
         </div>
         <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">✕</button>
       </div>
-      <div class="modal-body" style="padding:16px;">
+      <div class="modal-body" style="padding:18px;">
         <iframe src="assets/Alaguselvaganesh_V_Resume.pdf" class="pdf-preview-frame" title="Resume PDF Preview"></iframe>
       </div>
       <div class="modal-footer">

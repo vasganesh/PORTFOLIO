@@ -1,12 +1,131 @@
 /**
- * Alaguselvaganesh V — Portfolio Main Interactivity
- * Navigation scrollspy, modal deep-dives, resume preview/download,
- * command palette, custom magnetic cursor, and IST live clock.
+ * Alaguselvaganesh V — Main Interactivity & Cybernetic Engine
+ * 3D Card Tilt, Specular Glare, Cursor Spotlight, Synthesized SFX,
+ * Latency Benchmark Race, Scrollspy, Modals, and Command Palette.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
-     1. STICKY NAVBAR & SCROLLSPY
+     1. GLOBAL AMBIENT SPOTLIGHT
+     ========================================================================== */
+  window.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+  });
+
+  /* ==========================================================================
+     2. SYNTHESIZED TACTILE SOUND EFFECTS (WEB AUDIO API)
+     ========================================================================== */
+  let audioCtx = null;
+  let isSoundOn = false;
+  const soundToggleBtn = document.getElementById('btn-sound-toggle');
+
+  function initAudio() {
+    if (!audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) audioCtx = new AudioContext();
+    }
+  }
+
+  window.playSfx = function (freq = 440, type = 'sine', duration = 0.08) {
+    if (!isSoundOn || !audioCtx) return;
+    try {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    } catch (e) {
+      // Audio fallback
+    }
+  };
+
+  if (soundToggleBtn) {
+    soundToggleBtn.addEventListener('click', () => {
+      initAudio();
+      isSoundOn = !isSoundOn;
+      soundToggleBtn.classList.toggle('on', isSoundOn);
+      soundToggleBtn.querySelector('span:last-child').textContent = isSoundOn ? 'SFX: ON' : 'SFX: OFF';
+      if (isSoundOn) window.playSfx(520, 'triangle', 0.1);
+    });
+  }
+
+  /* ==========================================================================
+     3. 3D CARD TILT & SPECULAR GLARE
+     ========================================================================== */
+  const tiltCards = document.querySelectorAll('.tilt-card');
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+
+  if (isFinePointer) {
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(6px)`;
+        card.style.setProperty('--card-mouse-x', `${x}px`);
+        card.style.setProperty('--card-mouse-y', `${y}px`);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      });
+    });
+  }
+
+  /* ==========================================================================
+     4. LATENCY BENCHMARK LIVE RACE (RESEARCH LAB)
+     ========================================================================== */
+  const btnRunBenchmark = document.getElementById('btn-run-latency-race');
+  const barEdge = document.getElementById('benchmark-bar-edge');
+  const barCloud = document.getElementById('benchmark-bar-cloud');
+  const labelEdge = document.getElementById('benchmark-label-edge');
+  const labelCloud = document.getElementById('benchmark-label-cloud');
+
+  if (btnRunBenchmark) {
+    btnRunBenchmark.addEventListener('click', () => {
+      if (window.playSfx) window.playSfx(420, 'sine', 0.1);
+
+      if (barEdge && barCloud) {
+        barEdge.style.width = '0%';
+        barCloud.style.width = '0%';
+        if (labelEdge) labelEdge.textContent = 'Inferencing...';
+        if (labelCloud) labelCloud.textContent = 'Transmitting to Cloud...';
+
+        // Edge completes in ~12ms
+        setTimeout(() => {
+          barEdge.style.width = '100%';
+          if (labelEdge) labelEdge.textContent = '12ms (Completed Local Inference ✓)';
+          if (window.playSfx) window.playSfx(880, 'triangle', 0.15);
+        }, 150);
+
+        // Cloud completes after network roundtrip ~320ms
+        setTimeout(() => {
+          barCloud.style.width = '100%';
+          if (labelCloud) labelCloud.textContent = '320ms (Cloud Roundtrip Finished)';
+        }, 1400);
+      }
+    });
+  }
+
+  /* ==========================================================================
+     5. STICKY NAVBAR, SCROLLSPY & MOBILE MENU
      ========================================================================== */
   const header = document.querySelector('.site-header');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -18,17 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    // Header background blur effect
     if (scrollY > 30) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
 
-    // Scrollspy active section detection
     let currentId = '';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 140;
       const sectionHeight = section.offsetHeight;
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         currentId = section.getAttribute('id');
@@ -43,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile menu drawer toggle
   if (mobileToggleBtn && mobileNavDrawer) {
     mobileToggleBtn.addEventListener('click', () => {
       mobileToggleBtn.classList.toggle('open');
@@ -59,13 +175,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     2. SYSTEM STATUS HUD LIVE CLOCK (IST - CHENNAI)
+     6. IST CHENNAI LIVE CLOCK
      ========================================================================== */
   const hudClock = document.getElementById('hud-live-time');
   function updateISTClock() {
     if (!hudClock) return;
     const now = new Date();
-    // Format in IST
     const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
     hudClock.textContent = `${new Intl.DateTimeFormat('en-GB', options).format(now)} IST`;
   }
@@ -73,12 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
   updateISTClock();
 
   /* ==========================================================================
-     3. CUSTOM MAGNETIC CURSOR (DESKTOP)
+     7. CUSTOM MAGNETIC CURSOR (DESKTOP)
      ========================================================================== */
   const cursorDot = document.querySelector('.cursor-dot');
   const cursorRing = document.querySelector('.cursor-ring');
 
-  if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
+  if (cursorDot && cursorRing && isFinePointer) {
     let mouseX = -100;
     let mouseY = -100;
     let ringX = -100;
@@ -91,15 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function animateRing() {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
+      ringX += (mouseX - ringX) * 0.2;
+      ringY += (mouseY - ringY) * 0.2;
       cursorRing.style.transform = `translate(${ringX}px, ${ringY}px)`;
       requestAnimationFrame(animateRing);
     }
     animateRing();
 
-    // Hover effect on interactive elements
-    const interactiveEls = document.querySelectorAll('a, button, input, textarea, .build-card, .project-panel, .experience-card, .skill-pill');
+    const interactiveEls = document.querySelectorAll('a, button, input, textarea, .tilt-card, .skill-pill');
     interactiveEls.forEach(el => {
       el.addEventListener('mouseenter', () => cursorRing.classList.add('active'));
       el.addEventListener('mouseleave', () => cursorRing.classList.remove('active'));
@@ -107,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     4. PROJECT DEEP-DIVE MODAL
+     8. TECHNICAL CASE STUDY MODAL
      ========================================================================== */
   const projectModal = document.getElementById('project-modal');
   const modalCloseBtns = document.querySelectorAll('.modal-close-trigger');
@@ -122,13 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
       githubStatus: 'vasganesh on GitHub',
       githubUrl: 'https://github.com/vasganesh',
       content: `
-        <h4>Project Architecture & Decoupling</h4>
+        <h4>Decoupled Publisher-Subscriber Architecture</h4>
         <div class="code-architecture-diagram">
 VoteSubject (Publisher)
        │
-       ├──> notifies ──> Live Result Dashboard (Observer)
+       ├──> broadcasts ──> Live Result Dashboard (Observer)
        │
-       └──> notifies ──> Audit Log (Observer)
+       └──> broadcasts ──> Audit Log (Observer)
         </div>
         <p><strong>Problem:</strong> In high-concurrency electronic voting applications, tightly coupling the vote-casting logic with data reporting creates bottlenecks, polling latency, and synchronization inconsistencies across client dashboards.</p>
         <p><strong>Solution:</strong> Designed and implemented a real-time voting system strictly adhering to the Gang of Four (GoF) Observer design pattern. A centralized <code>VoteSubject</code> maintains state and instantly broadcasts state changes to registered <code>Observer</code> components without costly polling.</p>
@@ -208,10 +322,10 @@ Optimal Crop Recommendation
 
       projectModal.classList.add('open');
       document.body.style.overflow = 'hidden';
+      if (window.playSfx) window.playSfx(580, 'sine', 0.12);
     });
   });
 
-  // Modal close handlers
   function closeModal(modalEl) {
     if (!modalEl) return;
     modalEl.classList.remove('open');
@@ -228,15 +342,13 @@ Optimal Crop Recommendation
   [projectModal].forEach(modal => {
     if (modal) {
       modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal(modal);
-        }
+        if (e.target === modal) closeModal(modal);
       });
     }
   });
 
   /* ==========================================================================
-     5. RESUME PREVIEW & DOWNLOAD MODAL
+     9. RESUME MODAL & COMMAND PALETTE
      ========================================================================== */
   const resumeModal = document.getElementById('resume-modal');
   const viewResumeBtns = document.querySelectorAll('.btn-view-resume');
@@ -247,21 +359,17 @@ Optimal Crop Recommendation
       if (resumeModal) {
         resumeModal.classList.add('open');
         document.body.style.overflow = 'hidden';
+        if (window.playSfx) window.playSfx(620, 'sine', 0.12);
       }
     });
   });
 
   if (resumeModal) {
     resumeModal.addEventListener('click', (e) => {
-      if (e.target === resumeModal) {
-        closeModal(resumeModal);
-      }
+      if (e.target === resumeModal) closeModal(resumeModal);
     });
   }
 
-  /* ==========================================================================
-     6. COMMAND PALETTE (CMD+K / CTRL+K)
-     ========================================================================== */
   const cmdPalette = document.getElementById('cmd-palette');
   const cmdTriggerBtns = document.querySelectorAll('.btn-cmd');
   const cmdInput = document.getElementById('cmd-search-input');
@@ -275,6 +383,7 @@ Optimal Crop Recommendation
       cmdInput.focus();
     }
     filterCmdItems('');
+    if (window.playSfx) window.playSfx(640, 'triangle', 0.1);
   }
 
   function closeCmdPalette() {
@@ -282,9 +391,7 @@ Optimal Crop Recommendation
     cmdPalette.classList.remove('open');
   }
 
-  cmdTriggerBtns.forEach(btn => {
-    btn.addEventListener('click', openCmdPalette);
-  });
+  cmdTriggerBtns.forEach(btn => btn.addEventListener('click', openCmdPalette));
 
   window.addEventListener('keydown', (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
@@ -312,18 +419,12 @@ Optimal Crop Recommendation
     const q = query.toLowerCase().trim();
     cmdItems.forEach(item => {
       const text = item.textContent.toLowerCase();
-      if (text.includes(q)) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
+      item.style.display = text.includes(q) ? 'flex' : 'none';
     });
   }
 
   if (cmdInput) {
-    cmdInput.addEventListener('input', (e) => {
-      filterCmdItems(e.target.value);
-    });
+    cmdInput.addEventListener('input', (e) => filterCmdItems(e.target.value));
   }
 
   cmdItems.forEach(item => {
@@ -338,15 +439,13 @@ Optimal Crop Recommendation
         }
       } else if (target) {
         const targetEl = document.querySelector(target);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
 
   /* ==========================================================================
-     7. COPY EMAIL TO CLIPBOARD & CONTACT FORM
+     10. COPY EMAIL & CONTACT FORM
      ========================================================================== */
   const copyEmailBtn = document.getElementById('btn-copy-email');
   const emailValText = 'alaguselvaganesh2000@gmail.com';
@@ -358,6 +457,7 @@ Optimal Crop Recommendation
         copyEmailBtn.textContent = 'Copied!';
         copyEmailBtn.style.background = '#10b981';
         copyEmailBtn.style.color = '#000';
+        if (window.playSfx) window.playSfx(750, 'sine', 0.15);
         setTimeout(() => {
           copyEmailBtn.textContent = orig;
           copyEmailBtn.style.background = '';
@@ -376,22 +476,17 @@ Optimal Crop Recommendation
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('contact-name').value;
-      const email = document.getElementById('contact-email').value;
-      const message = document.getElementById('contact-message').value;
-
-      if (!name || !email || !message) return;
-
       if (formSuccessMsg) {
         formSuccessMsg.innerHTML = `✓ Thank you, ${name}! Your note has been queued. You can also directly reach out at <a href="mailto:alaguselvaganesh2000@gmail.com" style="color:#00f0ff;text-decoration:underline;">alaguselvaganesh2000@gmail.com</a>.`;
         formSuccessMsg.classList.add('success');
+        if (window.playSfx) window.playSfx(880, 'square', 0.2);
       }
-
       contactForm.reset();
     });
   }
 
   /* ==========================================================================
-     8. SKILL RELATIONSHIP HIGHLIGHTER
+     11. SKILLS RELATIONSHIP HIGHLIGHTER
      ========================================================================== */
   const skillPills = document.querySelectorAll('.skill-pill');
   const skillAssociations = {
@@ -402,7 +497,7 @@ Optimal Crop Recommendation
     'FastAPI': ['Python'],
     'Flask': ['Python'],
     'Java': ['SQL', 'MySQL'],
-    'PostgreSQL': ['SQL', 'Node.js', 'Prisma'],
+    'PostgreSQL': ['SQL', 'Node.js'],
     'MongoDB': ['Node.js', 'JavaScript']
   };
 

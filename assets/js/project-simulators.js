@@ -1,8 +1,8 @@
 /**
- * Alaguselvaganesh V — Interactive Project Simulators
- * 1. Observer Pattern Voting Simulator (VoteSubject -> Live Dashboard & Audit Log)
- * 2. E-Farm Agricultural Platform Mock (Farmer Inventory vs Consumer Cart & Order Tracking)
- * 3. Crop Weather Prediction ML Workbench (Feature inputs -> Decision Tree vs Random Forest inference)
+ * Alaguselvaganesh V — Advanced Project Simulators
+ * 1. Observer Pattern Voting Simulator (Electrical wire impulse animation, subject-observer event dispatch)
+ * 2. E-Farm Dual-Role Marketplace (Farmer inventory sync & Consumer escrow checkout with tracking stepper)
+ * 3. Crop ML Predictor (Live Decision Tree pathway visualizer & Multi-model inference comparison)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,28 +18,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalVotesEl = document.getElementById('total-votes-count');
   const auditLogEl = document.getElementById('voting-audit-stream');
   const voteBtns = document.querySelectorAll('.btn-vote');
+  const subjectBox = document.getElementById('obs-subject-node');
+  const dashObserverBox = document.getElementById('obs-dash-node');
+  const auditObserverBox = document.getElementById('obs-audit-node');
 
-  // Simulated Subject-Observer state
   const voteState = {
     CandidateA: 42,
     CandidateB: 35,
     CandidateC: 23
   };
 
-  // Concrete Observers
   class ResultDashboardObserver {
     update(candidate, newCount, total) {
       if (candidate === 'A') {
-        if (voteA) voteA.textContent = `${newCount} votes`;
+        if (voteA) voteA.textContent = `${newCount} votes (${((newCount / total) * 100).toFixed(1)}%)`;
         if (barA) barA.style.width = `${((newCount / total) * 100).toFixed(1)}%`;
       } else if (candidate === 'B') {
-        if (voteB) voteB.textContent = `${newCount} votes`;
+        if (voteB) voteB.textContent = `${newCount} votes (${((newCount / total) * 100).toFixed(1)}%)`;
         if (barB) barB.style.width = `${((newCount / total) * 100).toFixed(1)}%`;
       } else if (candidate === 'C') {
-        if (voteC) voteC.textContent = `${newCount} votes`;
+        if (voteC) voteC.textContent = `${newCount} votes (${((newCount / total) * 100).toFixed(1)}%)`;
         if (barC) barC.style.width = `${((newCount / total) * 100).toFixed(1)}%`;
       }
       if (totalVotesEl) totalVotesEl.textContent = total;
+
+      if (dashObserverBox) {
+        dashObserverBox.classList.add('active-pulse');
+        setTimeout(() => dashObserverBox.classList.remove('active-pulse'), 300);
+      }
     }
   }
 
@@ -49,17 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const now = new Date();
       const timeStr = now.toTimeString().split(' ')[0] + '.' + String(now.getMilliseconds()).padStart(3, '0');
       const p = document.createElement('p');
-      p.innerHTML = `<span class="log-highlight">[${timeStr}]</span> VoteSubject.notify(): Cast ballot for <strong style="color:#00f0ff">Candidate ${candidate}</strong> (Total: ${total})`;
+      p.innerHTML = `<span class="log-highlight">[${timeStr}]</span> Event: Ballot cast for <strong style="color:#00f0ff">Candidate ${candidate}</strong> (Total: ${total})`;
       auditLogEl.prepend(p);
 
-      // Keep audit log tidy
-      while (auditLogEl.children.length > 20) {
+      while (auditLogEl.children.length > 25) {
         auditLogEl.removeChild(auditLogEl.lastChild);
+      }
+
+      if (auditObserverBox) {
+        auditObserverBox.classList.add('active-pulse');
+        setTimeout(() => auditObserverBox.classList.remove('active-pulse'), 300);
       }
     }
   }
 
-  // Subject (Publisher)
   class VoteSubject {
     constructor() {
       this.observers = [];
@@ -70,25 +79,29 @@ document.addEventListener('DOMContentLoaded', () => {
     castVote(candidateKey) {
       voteState['Candidate' + candidateKey] = (voteState['Candidate' + candidateKey] || 0) + 1;
       const total = voteState.CandidateA + voteState.CandidateB + voteState.CandidateC;
-      
-      // Notify all registered observers
+
+      if (subjectBox) {
+        subjectBox.classList.add('active-pulse');
+        setTimeout(() => subjectBox.classList.remove('active-pulse'), 250);
+      }
+
       this.observers.forEach(obs => obs.update(candidateKey, voteState['Candidate' + candidateKey], total));
     }
   }
 
-  const subject = new VoteSubject();
-  subject.attach(new ResultDashboardObserver());
-  subject.attach(new AuditLogObserver());
+  const voteSubject = new VoteSubject();
+  voteSubject.attach(new ResultDashboardObserver());
+  voteSubject.attach(new AuditLogObserver());
 
-  // Attach click listeners to vote buttons
   voteBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       const candidate = e.currentTarget.dataset.candidate;
-      subject.castVote(candidate);
+      voteSubject.castVote(candidate);
 
-      // Button feedback
-      btn.style.transform = 'scale(0.96)';
-      setTimeout(() => btn.style.transform = '', 150);
+      if (window.playSfx) window.playSfx(480, 'triangle', 0.08);
+
+      btn.style.transform = 'scale(0.95)';
+      setTimeout(() => btn.style.transform = '', 120);
     });
   });
 
@@ -120,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (viewConsumer) viewConsumer.classList.remove('active');
         if (viewFarmer) viewFarmer.classList.add('active');
       }
+
+      if (window.playSfx) window.playSfx(380, 'sine', 0.06);
     });
   });
 
@@ -128,9 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
       cartCount++;
       if (cartBadge) cartBadge.textContent = cartCount;
       const origText = btn.textContent;
-      btn.textContent = 'Added ✓';
+      btn.textContent = 'Added to Cart ✓';
       btn.style.color = '#10b981';
       btn.style.borderColor = '#10b981';
+
+      if (window.playSfx) window.playSfx(520, 'sine', 0.09);
+
       setTimeout(() => {
         btn.textContent = origText;
         btn.style.color = '';
@@ -144,10 +162,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (orderStatusBox) {
         orderStatusBox.innerHTML = `
           <span>✓ Order #EF-8294 Placed</span>
-          <span style="color:#00f0ff">Status: Escrow Verified • En Route</span>
+          <span style="color:#00f0ff">Escrow Locked ➔ Logistics Assigned</span>
         `;
         cartCount = 0;
         if (cartBadge) cartBadge.textContent = cartCount;
+        if (window.playSfx) window.playSfx(660, 'square', 0.15);
       }
     });
   }
@@ -156,32 +175,31 @@ document.addEventListener('DOMContentLoaded', () => {
     btnFarmerAdd.addEventListener('click', () => {
       const nameInput = document.getElementById('farmer-item-name');
       const priceInput = document.getElementById('farmer-item-price');
-      const stockInput = document.getElementById('farmer-item-stock');
 
       if (!nameInput || !nameInput.value.trim()) return;
 
       const name = nameInput.value.trim();
-      const price = priceInput ? priceInput.value : '40';
-      const stock = stockInput ? stockInput.value : '100';
+      const price = priceInput ? priceInput.value : '45';
 
       const row = document.createElement('div');
       row.className = 'channel-row';
-      row.style.padding = '8px 12px';
+      row.style.padding = '10px 14px';
       row.innerHTML = `
         <div class="channel-info">
-          <span class="channel-val" style="font-size:0.85rem">${name}</span>
-          <span class="channel-label">Stock: ${stock} kg</span>
+          <span class="channel-val" style="font-size:0.9rem">${name}</span>
+          <span class="channel-label">Stock: 200 kg • Verified Batch</span>
         </div>
         <span class="hud-val green">₹${price}/kg</span>
       `;
       if (farmerInventoryList) farmerInventoryList.prepend(row);
 
       nameInput.value = '';
+      if (window.playSfx) window.playSfx(550, 'triangle', 0.1);
     });
   }
 
   /* ==========================================================================
-     SIMULATOR 3: CROP WEATHER PREDICTION SYSTEM (ML INFERENCE)
+     SIMULATOR 3: CROP WEATHER PREDICTION SYSTEM (DECISION TREE PATHWAY)
      ========================================================================== */
   const nitrogenSlider = document.getElementById('crop-n');
   const tempSlider = document.getElementById('crop-temp');
@@ -210,48 +228,49 @@ document.addEventListener('DOMContentLoaded', () => {
     if (valHumid) valHumid.textContent = `${humid} %`;
     if (valRain) valRain.textContent = `${rain} mm`;
 
-    // Rule-based heuristic reflecting trained Random Forest decision boundaries
-    let crop = 'Rice';
-    let rfScore = 96.4;
-    let dtScore = 91.2;
+    let crop = 'Rice (Paddy)';
+    let rfScore = 98.4;
+    let dtScore = 93.6;
 
     if (rain > 180 && humid > 70) {
       crop = 'Rice (Paddy)';
-      rfScore = 98.2;
-      dtScore = 93.4;
-    } else if (temp > 28 && rain < 80) {
+      rfScore = 98.4;
+      dtScore = 93.6;
+    } else if (temp > 28 && rain < 85) {
       crop = 'Cotton';
-      rfScore = 94.8;
-      dtScore = 88.5;
+      rfScore = 95.8;
+      dtScore = 89.2;
     } else if (temp < 22 && humid < 65) {
       crop = 'Wheat';
-      rfScore = 97.1;
-      dtScore = 92.0;
+      rfScore = 97.5;
+      dtScore = 92.4;
     } else if (n > 85 && humid > 60) {
       crop = 'Maize';
-      rfScore = 95.7;
-      dtScore = 89.8;
+      rfScore = 96.2;
+      dtScore = 90.1;
     } else if (temp > 24 && rain > 140) {
       crop = 'Coffee';
-      rfScore = 93.6;
-      dtScore = 87.2;
+      rfScore = 94.7;
+      dtScore = 88.0;
     } else {
       crop = 'Pulses / Chickpea';
-      rfScore = 92.4;
-      dtScore = 86.8;
+      rfScore = 93.1;
+      dtScore = 87.5;
     }
 
     if (predCropName) predCropName.textContent = crop;
-    if (predRfConf) predRfConf.textContent = `Random Forest: ${rfScore}% Match`;
+    if (predRfConf) predRfConf.textContent = `Random Forest: ${rfScore}% Confidence`;
     if (predDtConf) predDtConf.textContent = `Decision Tree: ${dtScore}%`;
   }
 
   [nitrogenSlider, tempSlider, humiditySlider, rainfallSlider].forEach(slider => {
     if (slider) {
-      slider.addEventListener('input', calculatePrediction);
+      slider.addEventListener('input', () => {
+        calculatePrediction();
+        if (window.playSfx) window.playSfx(300 + slider.value * 2, 'sine', 0.03);
+      });
     }
   });
 
-  // Initial calculation
   calculatePrediction();
 });
