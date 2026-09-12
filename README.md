@@ -2,6 +2,8 @@
 
 > Modern, high-performance portfolio website for **Alaguselvaganesh V**, Integrated M.Tech Software Engineering student at Vellore Institute of Technology (VIT), Full Stack Developer, AI enthusiast, and Research Assistant.
 
+🌐 **Live Website**: [https://vasganesh.github.io/PORTFOLIO/](https://vasganesh.github.io/PORTFOLIO/)
+
 ---
 
 ## ⚡ Tech Stack & Architecture
