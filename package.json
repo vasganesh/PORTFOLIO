@@ -1,0 +1,20 @@
+{
+  "name": "alaguselvaganesh-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio of Alaguselvaganesh V — Software Engineer | Full Stack & AI",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 .",
+    "build": "echo 'Static build ready'"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "software-engineer",
+    "full-stack",
+    "ai",
+    "edge-ai"
+  ],
+  "author": "Alaguselvaganesh V <alaguselvaganesh2000@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaguselvaganesh V — Software Engineer | Full Stack &amp; AI</title>
+  <meta name="description" content="Portfolio of Alaguselvaganesh V, Software Engineering student, Full Stack Developer and Research Assistant working across AI-powered applications and adaptive learning systems.">
+  <meta name="author" content="Alaguselvaganesh V">
+  <meta name="keywords" content="Alaguselvaganesh V, Software Engineer, Full Stack Developer, AI, React, Node.js, Python, Java, VIT, Edge AI">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alaguselvaganesh V — Software Engineer | Full Stack &amp; AI">
+  <meta property="og:description" content="Portfolio of Alaguselvaganesh V, Software Engineering student, Full Stack Developer and Research Assistant working across AI-powered applications and adaptive learning systems.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300f0ff'>AV</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Custom Magnetic Cursor (Desktop) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Command Palette (Cmd+K / Ctrl+K) -->
+  <div class="cmd-palette-backdrop" id="cmd-palette" role="dialog" aria-modal="true" aria-label="Command Navigation">
+    <div class="cmd-palette-box">
+      <div class="cmd-input-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="cmd-input" id="cmd-search-input" placeholder="Type a command or navigate to section..." autofocus>
+        <span class="cmd-key">ESC</span>
+      </div>
+      <div class="cmd-list">
+        <div class="cmd-item" data-target="#work">
+          <span>01. What I Build</span>
+          <span class="cmd-tag">Jump to section</span>
+        </div>
+        <div class="cmd-item" data-target="#experience">
+          <span>02. Work Experience (CopterCode &amp; VIT)</span>
+          <span class="cmd-tag">Timeline</span>
+        </div>
+        <div class="cmd-item" data-target="#projects">
+          <span>03. Featured Projects &amp; Demos</span>
+          <span class="cmd-tag">Interactive Case Studies</span>
+        </div>
+        <div class="cmd-item" data-target="#research">
+          <span>04. Research / Edge Intelligence (Patent)</span>
+          <span class="cmd-tag">Lab &amp; Latency Gauge</span>
+        </div>
+        <div class="cmd-item" data-target="#skills">
+          <span>05. Technical Stack</span>
+          <span class="cmd-tag">Languages &amp; Frameworks</span>
+        </div>
+        <div class="cmd-item" data-target="#education">
+          <span>06. Education &amp; Certifications</span>
+          <span class="cmd-tag">VIT &amp; Oracle Cloud</span>
+        </div>
+        <div class="cmd-item" data-target="#contact">
+          <span>07. Contact &amp; Inquiries</span>
+          <span class="cmd-tag">Get in Touch</span>
+        </div>
+        <div class="cmd-item" data-target="resume">
+          <span style="color:#00f0ff">08. View / Download Resume</span>
+          <span class="cmd-tag">PDF Document</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header & Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="brand-logo" aria-label="Alaguselvaganesh V Home">
+        <div class="monogram-badge">AV</div>
+        <div class="brand-text">
+          <span class="brand-name">Alaguselvaganesh V</span>
+          <span class="brand-role">Software Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-menu">
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="btn-cmd" aria-label="Open command palette">
+          <span class="cmd-key">⌘K</span>
+          <span>Search</span>
+        </button>
+        <button class="btn btn-primary btn-sm btn-view-resume">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Resume</span>
+        </button>
+        <button class="btn-mobile-toggle" id="btn-mobile-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="#work">01. What I Build</a>
+    <a href="#experience">02. Experience</a>
+    <a href="#projects">03. Projects</a>
+    <a href="#research">04. Research</a>
+    <a href="#skills">05. Skills</a>
+    <a href="#education">06. Education</a>
+    <a href="#contact">07. Contact</a>
+    <div style="margin-top:20px; display:flex; gap:12px; flex-direction:column;">
+      <button class="btn btn-primary btn-view-resume">View / Download Resume (PDF)</button>
+      <a href="mailto:alaguselvaganesh2000@gmail.com" class="btn btn-outline">Direct Email</a>
+    </div>
+  </div>
+
+  <!-- DOCKED SYSTEM STATUS HUD WIDGET -->
+  <aside class="system-status-hud" aria-label="System status">
+    <div class="hud-item">
+      <span class="status-dot"></span>
+      <span class="hud-label">PORTFOLIO:</span>
+      <span class="hud-val green">ONLINE</span>
+    </div>
+    <div class="hud-divider"></div>
+    <div class="hud-item">
+      <span class="hud-label">PROJECTS:</span>
+      <span class="hud-val cyan">03 PROD</span>
+    </div>
+    <div class="hud-divider"></div>
+    <div class="hud-item">
+      <span class="hud-label">RESEARCH:</span>
+      <span class="hud-val" style="color:#c084fc;">ACTIVE (EDGE AI)</span>
+    </div>
+    <div class="hud-divider"></div>
+    <div class="hud-item">
+      <span class="hud-label">FOCUS:</span>
+      <span class="hud-val">FULL STACK + AI</span>
+    </div>
+    <div class="hud-divider"></div>
+    <div class="hud-item">
+      <span class="hud-label">TIME:</span>
+      <span class="hud-val" id="hud-live-time">--:--:-- IST</span>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content -->
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>SOFTWARE ENGINEER • FULL STACK • AI</span>
+            </div>
+
+            <h1 class="hero-title">
+              Building <span class="highlight">intelligent</span><br>software systems.
+            </h1>
+
+            <p class="hero-subtitle">
+              Integrated M.Tech Software Engineering student at VIT, building full-stack applications, AI-powered learning systems, and adaptive software.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore My Work</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+
+              <button class="btn btn-outline btn-view-resume">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <span>View Resume</span>
+              </button>
+            </div>
+
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              <span>Open to Software Engineering / Full Stack opportunities</span>
+            </div>
+          </div>
+
+          <!-- Interactive Engineering Visual (Canvas Graph) -->
+          <div class="hero-visual-wrapper">
+            <div class="canvas-container">
+              <canvas id="hero-canvas"></canvas>
+              <div class="canvas-hint">Interactive Core Graph • Move cursor or drag nodes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHAT I BUILD SECTION
+         ========================================================================== -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span>01 — DOMAIN CAPABILITIES</span>
+          </div>
+          <h2 class="section-title">What I Build</h2>
+          <p class="section-subtitle">
+            Engineering robust digital systems from database architectures and scalable backends to client-side real-time experiences and edge machine learning.
+          </p>
+        </div>
+
+        <div class="what-i-build-grid">
+          <!-- Item 01 -->
+          <div class="build-card">
+            <div class="build-card-top">
+              <span class="build-num">01</span>
+              <div class="build-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="build-card-title">Full Stack Systems</h3>
+            <p class="build-card-desc">
+              Scalable web applications with authentication, APIs, databases and real-time functionality.
+            </p>
+            <div class="build-card-footer">
+              <span>Node.js • Express • PostgreSQL • MongoDB</span>
+              <span>→</span>
+            </div>
+          </div>
+
+          <!-- Item 02 -->
+          <div class="build-card">
+            <div class="build-card-top">
+              <span class="build-num">02</span>
+              <div class="build-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="build-card-title">AI-Powered Applications</h3>
+            <p class="build-card-desc">
+              Intelligent features using modern AI models to create personalized and adaptive experiences.
+            </p>
+            <div class="build-card-footer">
+              <span>Google Gemini AI • Dynamic Quizzing • AI Tutors</span>
+              <span>→</span>
+            </div>
+          </div>
+
+          <!-- Item 03 -->
+          <div class="build-card">
+            <div class="build-card-top">
+              <span class="build-num">03</span>
+              <div class="build-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="build-card-title">Learning Technology</h3>
+            <p class="build-card-desc">
+              Platforms for courses, assessments, virtual classrooms and personalized learning.
+            </p>
+            <div class="build-card-footer">
+              <span>LiveKit WebRTC • MinIO Storage • Prisma ORM</span>
+              <span>→</span>
+            </div>
+          </div>
+
+          <!-- Item 04 -->
+          <div class="build-card">
+            <div class="build-card-top">
+              <span class="build-num">04</span>
+              <div class="build-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="build-card-title">Research &amp; Edge AI</h3>
+            <p class="build-card-desc">
+              Exploring on-device intelligence and low-latency adaptive learning systems.
+            </p>
+            <div class="build-card-footer">
+              <span>Patent Under Filing • On-Device Inference • Low Latency</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE SECTION
+         ========================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span>02 — CAREER TIMELINE</span>
+          </div>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">
+            Hands-on software development across enterprise learning infrastructure and academic patent-pending research.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Entry 01: CopterCode -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="experience-card">
+              <div class="card-header-row">
+                <div>
+                  <h3 class="exp-role">Full Stack Developer Intern</h3>
+                  <div class="exp-company">
+                    <span>CopterCode</span>
+                    <span style="color:var(--text-muted)">•</span>
+                    <span style="color:var(--text-secondary)">IIT Madras Research Park</span>
+                  </div>
+                  <div class="exp-location">Chennai, India</div>
+                </div>
+                <div class="exp-badge-date">June 2026 – July 2026</div>
+              </div>
+
+              <ul class="exp-list">
+                <li>Developed a full-stack premium Learning Management System with secure role-based authentication for Admin, Teachers, and Students using JWT.</li>
+                <li>Built modules for course management, assignments, quizzes, recorded video lectures, and student progress tracking through RESTful APIs.</li>
+                <li>Implemented live virtual classrooms using LiveKit (WebRTC), enabling teachers to schedule and conduct real-time interactive classes.</li>
+                <li>Integrated Google Gemini AI to power an AI Tutor and dynamic quiz generation, enhancing personalized learning experiences.</li>
+                <li>Engineered a scalable backend using Node.js, Express.js, PostgreSQL, Prisma ORM, and MinIO for secure data, file, and media management.</li>
+              </ul>
+
+              <div class="tech-tag-list">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Prisma</span>
+                <span class="tech-tag">MinIO</span>
+                <span class="tech-tag">JWT</span>
+                <span class="tech-tag">LiveKit</span>
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">Google Gemini</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 02: VIT Research Assistant -->
+          <div class="timeline-item research-patent">
+            <div class="timeline-marker"></div>
+            <div class="experience-card patent-card">
+              <div class="card-header-row">
+                <div>
+                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                    <h3 class="exp-role">Research Assistant</h3>
+                    <span class="patent-badge">PATENT UNDER FILING</span>
+                  </div>
+                  <div class="exp-company purple">
+                    <span>Vellore Institute of Technology</span>
+                    <span style="color:var(--text-muted)">•</span>
+                    <span style="color:var(--text-secondary)">Guided by Kirutika L B</span>
+                  </div>
+                  <div class="exp-location">Vellore, Tamil Nadu</div>
+                </div>
+                <div class="exp-badge-date">2026 – Present</div>
+              </div>
+
+              <div class="exp-highlight-text">
+                "Self-Adaptive Personalized Learning Framework Using Edge Artificial Intelligence"
+              </div>
+
+              <ul class="exp-list">
+                <li>Researching and co-developing a patent-pending Self-Adaptive Personalized Learning Framework Using Edge Artificial Intelligence for on-device, low-latency adaptive learning.</li>
+                <li>Exploring edge-based model deployment strategies to enable personalized content delivery independent of continuous cloud connectivity, improving accessibility and responsiveness.</li>
+                <li>Collaborating with the faculty guide to design the framework architecture and evaluate adaptability across diverse learner profiles.</li>
+              </ul>
+
+              <div class="tech-tag-list">
+                <span class="tech-tag">Edge AI</span>
+                <span class="tech-tag">On-Device Machine Learning</span>
+                <span class="tech-tag">Low-Latency Systems</span>
+                <span class="tech-tag">Adaptive Frameworks</span>
+                <span class="tech-tag">Offline-First Delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION (HERO PRODUCT CASE STUDIES WITH SIMULATORS)
+         ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span>03 — FEATURED WORK</span>
+          </div>
+          <h2 class="section-title">Engineered Projects</h2>
+          <p class="section-subtitle">
+            Interactive software systems emphasizing architectural decoupling, full-stack transactional workflows, and machine learning pipelines.
+          </p>
+        </div>
+
+        <div class="projects-container">
+          <!-- PROJECT 01: Observer Pattern Voting System -->
+          <article class="project-panel" id="project-voting">
+            <div class="project-info">
+              <div>
+                <div class="project-header-meta">
+                  <span class="project-id-badge">PROJECT 01</span>
+                  <span class="project-category">Software Architecture • Java</span>
+                </div>
+                <h3 class="project-title">Voting System using Observer Pattern</h3>
+                <p class="project-summary">
+                  Designed and implemented a real-time voting system applying the Observer design pattern to decouple vote-casting logic from result notification, ensuring all subscribers receive instant, consistent updates.
+                </p>
+
+                <div class="project-features">
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Publisher-subscriber architecture with central VoteSubject broadcasting to registered Observers.</span>
+                  </div>
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Live result dashboard &amp; audit log synchronized without costly polling.</span>
+                  </div>
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>SOLID design principles, modular code, and unit tests simulating concurrent voting scenarios.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="tech-tag-list" style="margin-bottom:24px; padding-top:0; border-top:none;">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">OOP</span>
+                  <span class="tech-tag">Design Patterns</span>
+                  <span class="tech-tag">Observer Pattern</span>
+                  <span class="tech-tag">Unit Testing</span>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-primary btn-sm btn-open-project-modal" data-project="voting-system">
+                    <span>View Case Study</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </button>
+                  <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>vasganesh on GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Observer Simulation Pane -->
+            <div class="project-simulator-pane">
+              <div class="sim-box">
+                <div class="sim-header">
+                  <span class="sim-title">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    Live Observer Pattern Dispatcher
+                  </span>
+                  <span class="sim-status">
+                    <span class="status-dot"></span>
+                    <span>VoteSubject Active</span>
+                  </span>
+                </div>
+
+                <div class="observer-sim-grid">
+                  <!-- Vote Casting triggers -->
+                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">
+                    Click to cast ballot (Fires VoteSubject.notify()):
+                  </div>
+                  <div class="vote-controls">
+                    <button class="btn-vote" data-candidate="A">+ Candidate A</button>
+                    <button class="btn-vote" data-candidate="B">+ Candidate B</button>
+                    <button class="btn-vote" data-candidate="C">+ Candidate C</button>
+                  </div>
+
+                  <!-- Observer 1: Live Result Dashboard -->
+                  <div class="vote-results-chart">
+                    <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.75rem; font-weight:600; color:var(--text-primary); margin-bottom:4px;">
+                      <span>Observer 01: Result Dashboard</span>
+                      <span>Total: <span id="total-votes-count">100</span></span>
+                    </div>
+
+                    <div class="chart-bar-row">
+                      <div class="chart-bar-labels">
+                        <span>Candidate A</span>
+                        <span id="vote-count-a">42 votes</span>
+                      </div>
+                      <div class="chart-bar-track">
+                        <div class="chart-bar-fill" id="bar-fill-a" style="width: 42%;"></div>
+                      </div>
+                    </div>
+
+                    <div class="chart-bar-row">
+                      <div class="chart-bar-labels">
+                        <span>Candidate B</span>
+                        <span id="vote-count-b">35 votes</span>
+                      </div>
+                      <div class="chart-bar-track">
+                        <div class="chart-bar-fill" id="bar-fill-b" style="width: 35%;"></div>
+                      </div>
+                    </div>
+
+                    <div class="chart-bar-row">
+                      <div class="chart-bar-labels">
+                        <span>Candidate C</span>
+                        <span id="vote-count-c">23 votes</span>
+                      </div>
+                      <div class="chart-bar-track">
+                        <div class="chart-bar-fill" id="bar-fill-c" style="width: 23%;"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Observer 2: Audit Log Stream -->
+                  <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);">
+                    Observer 02: Synchronized Audit Log Stream
+                  </div>
+                  <div class="sim-audit-log" id="voting-audit-stream">
+                    <p><span class="log-highlight">[12:00:00.120]</span> VoteSubject initialized with 2 registered Observers.</p>
+                    <p><span class="log-highlight">[12:00:01.450]</span> Ballot cast for Candidate A. Observers updated.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: E-Farm Platform -->
+          <article class="project-panel" id="project-efarm">
+            <div class="project-info">
+              <div>
+                <div class="project-header-meta">
+                  <span class="project-id-badge">PROJECT 02</span>
+                  <span class="project-category">Full Stack • E-Commerce • Marketplace</span>
+                </div>
+                <h3 class="project-title">E-Farm – Agricultural Products Selling Platform</h3>
+                <p class="project-summary">
+                  Built a full-stack online marketplace connecting farmers directly with consumers, eliminating intermediaries in the agricultural supply chain.
+                </p>
+
+                <div class="project-features">
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Relational MySQL schema managing products, categories, orders, and user roles with referential integrity.</span>
+                  </div>
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Role-based access control separating farmer (listing, inventory) and consumer (browsing, ordering) workflows.</span>
+                  </div>
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>End-to-end order management: cart, checkout, order tracking, and category/location-based filtering.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="tech-tag-list" style="margin-bottom:24px; padding-top:0; border-top:none;">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Firebase</span>
+                  <span class="tech-tag">HTML/CSS/JS</span>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-primary btn-sm btn-open-project-modal" data-project="efarm-platform">
+                    <span>View Case Study</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </button>
+                  <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>vasganesh on GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive E-Farm Dual-Role Mockup Pane -->
+            <div class="project-simulator-pane">
+              <div class="sim-box">
+                <div class="sim-header">
+                  <span class="sim-title">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    E-Farm Role-Based Portal
+                  </span>
+                  <div class="efarm-tabs">
+                    <button class="tab-btn active" data-tab="consumer">Consumer View</button>
+                    <button class="tab-btn" data-tab="farmer">Farmer View</button>
+                  </div>
+                </div>
+
+                <!-- Consumer Marketplace View -->
+                <div class="efarm-view-panel active" id="efarm-view-consumer">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-family:var(--font-mono); font-size:0.75rem;">
+                    <span>Direct Farm Fresh Produce</span>
+                    <span style="color:var(--cyan)">Cart: <strong id="efarm-cart-count">1</strong> items</span>
+                  </div>
+
+                  <div class="efarm-items-grid">
+                    <div class="efarm-item-card">
+                      <div class="efarm-item-name">Organic Basmati Rice</div>
+                      <div class="efarm-item-price">₹65 / kg • Thanjavur</div>
+                      <button class="btn-add-cart">+ Add to Cart</button>
+                    </div>
+                    <div class="efarm-item-card">
+                      <div class="efarm-item-name">Farm Fresh Tomatoes</div>
+                      <div class="efarm-item-price">₹28 / kg • Salem</div>
+                      <button class="btn-add-cart">+ Add to Cart</button>
+                    </div>
+                  </div>
+
+                  <div style="display:flex; gap:10px; margin-bottom:12px;">
+                    <button class="btn btn-primary btn-sm" id="btn-efarm-checkout" style="flex:1; padding:8px;">
+                      Simulate Instant Checkout
+                    </button>
+                  </div>
+
+                  <div class="efarm-order-status" id="efarm-order-status-box">
+                    <span>Order #EF-8291: In Transit</span>
+                    <span style="color:#00f0ff">Payment: Escrow Released</span>
+                  </div>
+                </div>
+
+                <!-- Farmer Inventory View -->
+                <div class="efarm-view-panel" id="efarm-view-farmer">
+                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom:10px;">
+                    Farmer Inventory &amp; Listing Dashboard:
+                  </div>
+
+                  <div style="display:grid; grid-template-columns: 1fr 80px; gap:8px; margin-bottom:10px;">
+                    <input type="text" id="farmer-item-name" class="form-input" placeholder="Crop name (e.g. Millet)" style="padding:6px 10px; font-size:0.8rem;">
+                    <input type="number" id="farmer-item-price" class="form-input" placeholder="₹/kg" value="45" style="padding:6px 10px; font-size:0.8rem;">
+                  </div>
+                  <button class="btn btn-outline btn-sm" id="btn-farmer-add-item" style="width:100%; margin-bottom:12px; padding:6px;">
+                    + Publish Direct Listing to MySQL
+                  </button>
+
+                  <div style="display:flex; flex-direction:column; gap:6px;" id="farmer-inventory-list">
+                    <div class="channel-row" style="padding:8px 12px;">
+                      <div class="channel-info">
+                        <span class="channel-val" style="font-size:0.85rem">Groundnut</span>
+                        <span class="channel-label">Stock: 250 kg • Vellore Hub</span>
+                      </div>
+                      <span class="hud-val green">₹72/kg</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: Crop Weather Prediction System -->
+          <article class="project-panel" id="project-crop">
+            <div class="project-info">
+              <div>
+                <div class="project-header-meta">
+                  <span class="project-id-badge">PROJECT 03</span>
+                  <span class="project-category">Machine Learning • Scikit-Learn</span>
+                </div>
+                <h3 class="project-title">Crop Weather Prediction System</h3>
+                <p class="project-summary">
+                  Developed an end-to-end machine learning pipeline to preprocess historical weather and soil datasets and recommend suitable crops based on regional climate conditions.
+                </p>
+
+                <div class="project-features">
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Trained and benchmarked multiple Scikit-learn classification models (Decision Tree, Random Forest) for crop recommendation.</span>
+                  </div>
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Feature engineering and selection to isolate influential agro-climatic variables, boosting generalization.</span>
+                  </div>
+                  <div class="feat-point">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Hyperparameter tuning via cross-validation to reduce overfitting and improve prediction reliability.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="tech-tag-list" style="margin-bottom:24px; padding-top:0; border-top:none;">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Scikit-learn</span>
+                  <span class="tech-tag">NumPy</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">Random Forest</span>
+                  <span class="tech-tag">Decision Tree</span>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-primary btn-sm btn-open-project-modal" data-project="crop-ml">
+                    <span>View Case Study</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </button>
+                  <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>vasganesh on GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive ML Prediction Workbench Pane -->
+            <div class="project-simulator-pane">
+              <div class="sim-box">
+                <div class="sim-header">
+                  <span class="sim-title">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                    ML Inference Engine Simulator
+                  </span>
+                  <span class="sim-status" style="color:var(--purple)">
+                    <span class="status-dot" style="background:var(--purple); box-shadow:0 0 8px var(--purple)"></span>
+                    <span>Scikit Pipeline</span>
+                  </span>
+                </div>
+
+                <div class="crop-sliders">
+                  <div class="slider-group">
+                    <div class="slider-label">
+                      <span>Soil Nitrogen (N)</span>
+                      <span id="val-crop-n">90 mg/kg</span>
+                    </div>
+                    <input type="range" class="crop-range" id="crop-n" min="20" max="140" value="90">
+                  </div>
+
+                  <div class="slider-group">
+                    <div class="slider-label">
+                      <span>Temperature</span>
+                      <span id="val-crop-temp">26 °C</span>
+                    </div>
+                    <input type="range" class="crop-range" id="crop-temp" min="10" max="45" value="26">
+                  </div>
+
+                  <div class="slider-group">
+                    <div class="slider-label">
+                      <span>Humidity</span>
+                      <span id="val-crop-humidity">80 %</span>
+                    </div>
+                    <input type="range" class="crop-range" id="crop-humidity" min="20" max="100" value="80">
+                  </div>
+
+                  <div class="slider-group">
+                    <div class="slider-label">
+                      <span>Rainfall</span>
+                      <span id="val-crop-rainfall">210 mm</span>
+                    </div>
+                    <input type="range" class="crop-range" id="crop-rainfall" min="30" max="300" value="210">
+                  </div>
+                </div>
+
+                <!-- Predicted Output -->
+                <div class="prediction-output-card">
+                  <div>
+                    <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); text-transform:uppercase;">
+                      Optimal Crop Recommendation:
+                    </div>
+                    <div class="crop-pred-name" id="pred-crop-name">Rice (Paddy)</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div class="crop-pred-conf" id="pred-rf-confidence">Random Forest: 98.2% Match</div>
+                    <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);" id="pred-dt-confidence">Decision Tree: 93.4%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RESEARCH SECTION (EDGE ARTIFICIAL INTELLIGENCE LAB)
+         ========================================================================== -->
+    <section class="section research-section" id="research">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow purple">
+            <span>04 — ACADEMIC RESEARCH • VIT</span>
+          </div>
+          <h2 class="section-title">Self-Adaptive Personalized Learning</h2>
+          <p class="section-subtitle">
+            Edge Artificial Intelligence Framework • Guided by Kirutika L B at Vellore Institute of Technology.
+          </p>
+        </div>
+
+        <div class="research-lab-card">
+          <div class="research-meta-tags">
+            <span class="research-tag">PATENT UNDER FILING</span>
+            <span class="research-tag cyan">ON-DEVICE INFERENCE</span>
+            <span class="research-tag">LOW-LATENCY FEEDBACK</span>
+            <span class="research-tag cyan">ADAPTIVE CONTENT DELIVERY</span>
+            <span class="research-tag">CLOUD-INDEPENDENT</span>
+          </div>
+
+          <p style="font-size:1.05rem; line-height:1.75; color:var(--text-secondary); max-width:860px;">
+            Researching and co-developing a patent-pending <strong>Self-Adaptive Personalized Learning Framework Using Edge Artificial Intelligence</strong> for on-device, low-latency adaptive learning. The architecture explores edge-based model deployment strategies to enable personalized content delivery independent of continuous cloud connectivity, improving accessibility and responsiveness across diverse learner profiles.
+          </p>
+
+          <!-- Interactive System Architecture Flow Diagram -->
+          <div class="research-diagram-wrapper">
+            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.08em;">
+              Framework Dataflow Pipeline
+            </div>
+            <div class="system-flow-diagram">
+              <div class="flow-node">
+                <div class="node-title">01. Learner</div>
+                <div class="node-sub">Student Interaction</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node">
+                <div class="node-title">02. Behavior Signals</div>
+                <div class="node-sub">Response Time &amp; Accuracy</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node edge-node">
+                <div class="node-title" style="color:var(--cyan);">03. Edge AI</div>
+                <div class="node-sub">On-Device Local Inference</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node">
+                <div class="node-title">04. Personalization</div>
+                <div class="node-sub">Dynamic Model Tuning</div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node">
+                <div class="node-title">05. Adaptive Content</div>
+                <div class="node-sub">Personalized Delivery</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Latency Gauge Comparison -->
+          <div class="latency-comparison">
+            <div class="latency-metric-card highlight">
+              <div>
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--cyan); text-transform:uppercase; margin-bottom:4px;">
+                  Edge AI Framework (Proposed)
+                </div>
+                <div style="font-size:0.85rem; color:var(--text-secondary);">Zero cloud round-trip delay, 100% offline availability</div>
+              </div>
+              <div class="lat-num">~12 ms</div>
+            </div>
+
+            <div class="latency-metric-card">
+              <div>
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:4px;">
+                  Conventional Cloud Roundtrip
+                </div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Prone to network jitter &amp; server latency</div>
+              </div>
+              <div class="lat-num cloud">~320 ms</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS SECTION (ENGINEERING STACK)
+         ========================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span>05 — CORE COMPETENCIES</span>
+          </div>
+          <h2 class="section-title">Engineering Stack</h2>
+          <p class="section-subtitle">
+            Languages, frameworks, databases, and tooling strictly verified from hands-on production and academic research experience. Hover over cards to highlight cross-stack synergy.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Group 1: Languages -->
+          <div class="skills-group-card">
+            <div class="skills-group-header">
+              <div class="skills-group-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div class="skills-group-title">Languages</div>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill" data-skill="Python">Python</span>
+              <span class="skill-pill" data-skill="Java">Java</span>
+              <span class="skill-pill" data-skill="C++">C++</span>
+              <span class="skill-pill" data-skill="JavaScript">JavaScript</span>
+              <span class="skill-pill" data-skill="TypeScript">TypeScript</span>
+              <span class="skill-pill" data-skill="SQL">SQL</span>
+            </div>
+          </div>
+
+          <!-- Group 2: Frameworks & Libraries -->
+          <div class="skills-group-card">
+            <div class="skills-group-header">
+              <div class="skills-group-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <div class="skills-group-title">Frameworks &amp; Libraries</div>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill" data-skill="React.js">React.js</span>
+              <span class="skill-pill" data-skill="Node.js">Node.js</span>
+              <span class="skill-pill" data-skill="Express.js">Express.js</span>
+              <span class="skill-pill" data-skill="Flask">Flask</span>
+              <span class="skill-pill" data-skill="FastAPI">FastAPI</span>
+            </div>
+          </div>
+
+          <!-- Group 3: Databases -->
+          <div class="skills-group-card">
+            <div class="skills-group-header">
+              <div class="skills-group-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+              <div class="skills-group-title">Databases</div>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill" data-skill="MongoDB">MongoDB</span>
+              <span class="skill-pill" data-skill="MySQL">MySQL</span>
+            </div>
+          </div>
+
+          <!-- Group 4: Tools & Frameworks -->
+          <div class="skills-group-card">
+            <div class="skills-group-header">
+              <div class="skills-group-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+              <div class="skills-group-title">Tools &amp; Frameworks</div>
+            </div>
+            <div class="skill-pills-list">
+              <span class="skill-pill" data-skill="Git">Git</span>
+              <span class="skill-pill" data-skill="GitHub">GitHub</span>
+              <span class="skill-pill" data-skill="Jupyter Notebook">Jupyter Notebook</span>
+              <span class="skill-pill" data-skill="Colab">Colab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION & CERTIFICATIONS SECTION
+         ========================================================================== -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span>06 — CREDENTIALS</span>
+          </div>
+          <h2 class="section-title">Education &amp; Certifications</h2>
+          <p class="section-subtitle">
+            Formal engineering degree credentials and industry-recognized certifications.
+          </p>
+        </div>
+
+        <div class="edu-cert-grid">
+          <!-- Education Card -->
+          <div class="edu-card">
+            <div class="section-eyebrow" style="margin-bottom:16px;">
+              <span>DEGREE PROGRAM</span>
+            </div>
+            <h3 class="edu-institution">Vellore Institute of Technology</h3>
+            <div class="edu-location">Vellore, Tamil Nadu</div>
+            <div class="edu-degree">Integrated M.Tech in Software Engineering</div>
+
+            <div class="cgpa-showcase">
+              <div class="cgpa-val">8.17</div>
+              <div class="cgpa-meta">
+                <span class="cgpa-label">Cumulative GPA</span>
+                <span class="cgpa-years">Academic Period: 2022 – 2027</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications Card -->
+          <div class="cert-card">
+            <div class="section-eyebrow" style="margin-bottom:16px;">
+              <span>VERIFIED CERTIFICATIONS</span>
+            </div>
+
+            <div class="cert-list">
+              <!-- Cert 01: Oracle Cloud -->
+              <div class="cert-item oracle">
+                <div class="cert-issuer">Oracle University • Cloud &amp; Infrastructure</div>
+                <div class="cert-name">Oracle Cloud Infrastructure 2025 Certified DevOps Professional</div>
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-secondary); margin-top:8px;">
+                  Key competence: CI/CD automation, cloud infrastructure deployment, and container orchestration.
+                </div>
+              </div>
+
+              <!-- Cert 02: Udemy Python -->
+              <div class="cert-item">
+                <div class="cert-issuer" style="color:var(--cyan);">Udemy</div>
+                <div class="cert-name">The Complete Python Pro Bootcamp</div>
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-secondary); margin-top:8px;">
+                  Key competence: OOP, algorithmic problem solving, automated scripting, and web development.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT / PROFILE SECTION
+         ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span>07 — PHILOSOPHY &amp; PROFILE</span>
+          </div>
+          <h2 class="section-title">Engineering Philosophy</h2>
+        </div>
+
+        <div class="about-box">
+          <div class="about-body">
+            <p>
+              I am a Software Engineering student at Vellore Institute of Technology working across full-stack development, AI-powered applications, and adaptive learning research.
+            </p>
+            <p>
+              My focus is on designing production-ready systems that combine robust backend architecture, responsive and accessible user interfaces, and pragmatic machine learning capabilities. Whether architecting role-based learning management systems or patent-pending on-device edge intelligence models, I prioritize maintainability, SOLID design principles, and tangible real-world performance.
+            </p>
+          </div>
+
+          <div class="about-pillars">
+            <div class="pillar-item">
+              <div class="pillar-title">Full Stack Systems</div>
+              <div class="pillar-desc">Clean API design, relational schema integrity, and real-time streaming architectures.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-title">AI Integration</div>
+              <div class="pillar-desc">Leveraging modern generative models and ML classification pipelines to solve user problems.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-title">Clean Code &amp; SOLID</div>
+              <div class="pillar-desc">Modular, testable, decoupled systems utilizing established software design patterns.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-title">Edge AI &amp; Research</div>
+              <div class="pillar-desc">Exploring on-device intelligence and low-latency personalized learning frameworks.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <span>08 — GET IN TOUCH</span>
+          </div>
+          <h2 class="section-title">Let's build something useful.</h2>
+          <p class="section-subtitle">
+            Open to conversations about software engineering, full-stack development, AI applications and interesting technical problems.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Channels Card -->
+          <div class="contact-direct-card">
+            <div>
+              <h3 style="font-size:1.35rem; margin-bottom:8px;">Direct Contact Information</h3>
+              <p style="font-size:0.92rem; color:var(--text-muted);">
+                Feel free to connect via direct email, phone, or professional profiles.
+              </p>
+
+              <div class="contact-channels">
+                <!-- Email -->
+                <div class="channel-row">
+                  <div class="channel-info">
+                    <span class="channel-label">Email Address</span>
+                    <a href="mailto:alaguselvaganesh2000@gmail.com" class="channel-val">alaguselvaganesh2000@gmail.com</a>
+                  </div>
+                  <button class="btn-copy" id="btn-copy-email">Copy</button>
+                </div>
+
+                <!-- Phone -->
+                <div class="channel-row">
+                  <div class="channel-info">
+                    <span class="channel-label">Phone</span>
+                    <a href="tel:+918637448702" class="channel-val">+91 8637448702</a>
+                  </div>
+                  <a href="tel:+918637448702" class="btn-copy">Call</a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="channel-row">
+                  <div class="channel-info">
+                    <span class="channel-label">GitHub</span>
+                    <span class="channel-val">vasganesh</span>
+                  </div>
+                  <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer" class="btn-copy">Profile ↗</a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="channel-row">
+                  <div class="channel-info">
+                    <span class="channel-label">LinkedIn</span>
+                    <span class="channel-val">Ganesh</span>
+                  </div>
+                  <a href="https://www.linkedin.com/in/ganesh" target="_blank" rel="noopener noreferrer" class="btn-copy">Profile ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="mailto:alaguselvaganesh2000@gmail.com" class="btn btn-primary" style="flex:1;">
+                <span>Email Me</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </a>
+              <button class="btn btn-outline btn-view-resume">
+                <span>View Resume</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Message Form Card -->
+          <div class="contact-form-card">
+            <h3 style="font-size:1.35rem; margin-bottom:8px;">Send a Message</h3>
+            <p style="font-size:0.92rem; color:var(--text-muted); margin-bottom:24px;">
+              Leave a note for software engineering inquiries, collaborations, or technical discussions.
+            </p>
+
+            <form id="portfolio-contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. sarah@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Describe your project, role, or technical inquiry..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                <span>Send Message</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+
+              <div class="form-status-msg" id="contact-form-success"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <span>© 2026 Alaguselvaganesh V. Designed &amp; Engineered with precision.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#hero">Back to Top ↑</a>
+          <a href="https://github.com/vasganesh" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/ganesh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="assets/Alaguselvaganesh_V_Resume.pdf" download="Alaguselvaganesh_V_Resume.pdf">Resume PDF</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 1: PROJECT DEEP-DIVE CASE STUDY
+       ========================================================================== -->
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <span class="project-id-badge" style="margin-bottom:6px; display:inline-block;">TECHNICAL CASE STUDY</span>
+          <h3 class="modal-title" id="modal-project-title">Project Details</h3>
+        </div>
+        <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" id="modal-project-content">
+        <!-- Injected dynamically via main.js -->
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com/vasganesh" id="modal-project-github" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+          <span>vasganesh on GitHub</span>
+        </a>
+        <button class="btn btn-primary btn-sm modal-close-trigger">Close Case Study</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: RESUME PREVIEW & DOWNLOAD
+       ========================================================================== -->
+  <div class="modal-backdrop" id="resume-modal" role="dialog" aria-modal="true" aria-label="Resume Document">
+    <div class="modal-container" style="max-width:920px;">
+      <div class="modal-header">
+        <div>
+          <span class="section-eyebrow" style="margin-bottom:4px; padding:3px 10px; font-size:0.72rem;">OFFICIAL RESUME</span>
+          <h3 class="modal-title">Alaguselvaganesh V — Curriculum Vitae</h3>
+        </div>
+        <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" style="padding:16px;">
+        <iframe src="assets/Alaguselvaganesh_V_Resume.pdf" class="pdf-preview-frame" title="Resume PDF Preview"></iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="assets/Alaguselvaganesh_V_Resume.pdf" download="Alaguselvaganesh_V_Resume.pdf" class="btn btn-primary btn-sm">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download PDF</span>
+        </a>
+        <button class="btn btn-outline btn-sm modal-close-trigger">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/interactive-hero.js"></script>
+  <script src="assets/js/project-simulators.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
